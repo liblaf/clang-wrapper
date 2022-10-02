@@ -2,3 +2,4 @@ commitizen:
   name: cz_conventional_commits
   tag_format: $version
   version: 0.0.0
+  bump_message: "ci: bump version $current_version -> $new_version"
