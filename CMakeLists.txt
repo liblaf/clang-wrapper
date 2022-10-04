@@ -43,7 +43,14 @@ link_libraries(${LLVM_LIBS})
 
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/common/ COMMON_SRCS)
 
-list(APPEND BASE_SRCS ${COMMON_SRCS} src/main.cc src/pass/pass_base.cc src/wrapper/wrapper_base.cc)
-add_executable(base ${BASE_SRCS})
-add_executable(base++ ${BASE_SRCS})
+list(APPEND BASE_SRCS ${COMMON_SRCS} src/pass/pass_base.cc src/wrapper/wrapper_base.cc)
+add_executable(base   ${BASE_SRCS} src/main/base.cc)
+add_executable(base++ ${BASE_SRCS} src/main/base.cc)
 target_compile_definitions(base++ PUBLIC USE_CXX)
+
+list(APPEND CALL_HOOK_SRCS ${BASE_SRCS} src/pass/pass_call_hook.cc src/wrapper/wrapper_call_hook.cc)
+add_executable(call-hook   ${CALL_HOOK_SRCS} src/main/call_hook.cc)
+add_executable(call-hook++ ${CALL_HOOK_SRCS} src/main/call_hook.cc)
+target_compile_definitions(call-hook   PUBLIC RUNTIME_HOME="${CMAKE_SOURCE_DIR}/src/runtime/call_hook")
+target_compile_definitions(call-hook++ PUBLIC RUNTIME_HOME="${CMAKE_SOURCE_DIR}/src/runtime/call_hook")
+target_compile_definitions(call-hook++ PUBLIC USE_CXX)
