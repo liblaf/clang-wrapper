@@ -76,13 +76,4 @@ void PassBase::write_module(llvm::StringRef filename, llvm::Module& mod) {
   mod.print(output, nullptr);
 }
 
-bool PassBase::apply_pass(llvm::StringRef filename) {
-  llvm::LLVMContext context;
-  auto mod = PassBase::parse_ir_file(filename, context);
-  auto pass = std::make_unique<PassBase>(*mod);
-  bool modified = pass->run_on_module();
-  if (modified) PassBase::write_module(filename, *mod);
-  return modified;
-}
-
 Module& PassBase::target() { return this->_target; }
