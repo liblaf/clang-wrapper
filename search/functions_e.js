@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['warning_0',['warning',['../classLogger.html#a74f09cded94283026b8de70ff535ff68',1,'Logger']]],
-  ['wrapperbase_1',['WrapperBase',['../classWrapperBase.html#a567ee8ff21123a433f4a518075f96585',1,'WrapperBase']]]
+  ['target_0',['target',['../classPassBase.html#a29cfb24980cca45f2aea9379b6ade54e',1,'PassBase']]],
+  ['to_5fstring_1',['to_string',['../classPhase.html#a3f9135130bb9cc3bf517f56168ac0533',1,'Phase']]]
 ];

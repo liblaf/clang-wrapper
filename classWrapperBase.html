@@ -98,10 +98,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afea6ca06dd6b93852c798e97bc32b207"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84203b17b54d0b1a2c6db52feb702527"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWrapperBase.html#a84203b17b54d0b1a2c6db52feb702527">join_args</a> (const std::vector&lt; std::string &gt; &amp;options, const std::vector&lt; std::filesystem::path &gt; &amp;inputs)</td></tr>
 <tr class="separator:a84203b17b54d0b1a2c6db52feb702527"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a325e655597bbc2c06c5d2ae02b2c0e0d"><td class="memItemLeft" align="right" valign="top">virtual std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWrapperBase.html#a325e655597bbc2c06c5d2ae02b2c0e0d">generate_ll</a> (std::vector&lt; std::string &gt; options, const std::filesystem::path &amp;input, std::optional&lt; std::filesystem::path &gt; output={}, const bool disable_optimize=true, const bool enable_debug=true)</td></tr>
-<tr class="separator:a325e655597bbc2c06c5d2ae02b2c0e0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3a020b1bac3016db7f2b9396fadccfb"><td class="memItemLeft" align="right" valign="top">virtual std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWrapperBase.html#ad3a020b1bac3016db7f2b9396fadccfb">generate_o</a> (std::vector&lt; std::string &gt; options, const std::filesystem::path &amp;input, std::optional&lt; std::filesystem::path &gt; output={}, const bool disable_optimize=true, const bool enable_debug=true)</td></tr>
-<tr class="separator:ad3a020b1bac3016db7f2b9396fadccfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c46fc7e5b880fcfd4fd7db141409c7e"><td class="memItemLeft" align="right" valign="top">virtual std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWrapperBase.html#a5c46fc7e5b880fcfd4fd7db141409c7e">generate_ll</a> (std::vector&lt; std::string &gt; options, const std::filesystem::path &amp;input, std::optional&lt; std::filesystem::path &gt; output=std::nullopt, const bool disable_optimize=true, const bool enable_debug=true)</td></tr>
+<tr class="separator:a5c46fc7e5b880fcfd4fd7db141409c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab290c99d929429d30f19b2ed209f44ba"><td class="memItemLeft" align="right" valign="top">virtual std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWrapperBase.html#ab290c99d929429d30f19b2ed209f44ba">generate_o</a> (std::vector&lt; std::string &gt; options, const std::filesystem::path &amp;input, std::optional&lt; std::filesystem::path &gt; output=std::nullopt, const bool disable_optimize=true, const bool enable_debug=true)</td></tr>
+<tr class="separator:ab290c99d929429d30f19b2ed209f44ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90c0f5a7efdff0c665f6be1b92a9d3d2"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWrapperBase.html#a90c0f5a7efdff0c665f6be1b92a9d3d2">compile</a> (int argc, char **argv)</td></tr>
 <tr class="separator:a90c0f5a7efdff0c665f6be1b92a9d3d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19f62ef28083c9d80ec1767e4d95507b"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWrapperBase.html#a19f62ef28083c9d80ec1767e4d95507b">compile</a> (std::vector&lt; std::string &gt; args)</td></tr>
@@ -278,8 +278,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a325e655597bbc2c06c5d2ae02b2c0e0d" name="a325e655597bbc2c06c5d2ae02b2c0e0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a325e655597bbc2c06c5d2ae02b2c0e0d">&#9670;&nbsp;</a></span>generate_ll()</h2>
+<a id="a5c46fc7e5b880fcfd4fd7db141409c7e" name="a5c46fc7e5b880fcfd4fd7db141409c7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c46fc7e5b880fcfd4fd7db141409c7e">&#9670;&nbsp;</a></span>generate_ll()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -303,7 +303,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::optional&lt; std::filesystem::path &gt;&#160;</td>
-          <td class="paramname"><em>output</em> = <code>{}</code>, </td>
+          <td class="paramname"><em>output</em> = <code>std::nullopt</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -332,8 +332,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ad3a020b1bac3016db7f2b9396fadccfb" name="ad3a020b1bac3016db7f2b9396fadccfb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3a020b1bac3016db7f2b9396fadccfb">&#9670;&nbsp;</a></span>generate_o()</h2>
+<a id="ab290c99d929429d30f19b2ed209f44ba" name="ab290c99d929429d30f19b2ed209f44ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab290c99d929429d30f19b2ed209f44ba">&#9670;&nbsp;</a></span>generate_o()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -357,7 +357,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::optional&lt; std::filesystem::path &gt;&#160;</td>
-          <td class="paramname"><em>output</em> = <code>{}</code>, </td>
+          <td class="paramname"><em>output</em> = <code>std::nullopt</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
