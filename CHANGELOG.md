@@ -1,3 +1,9 @@
+## 0.4.1 (2022-10-04)
+
+### Fix
+
+- **base**: hide member data from direct access
+
 ## 0.4.0 (2022-10-04)
 
 ## 0.2.1 (2022-10-04)
