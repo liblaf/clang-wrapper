@@ -6,8 +6,8 @@
 #include <string>
 #include <vector>
 
-#include "../common/executor.h"
-#include "../common/phase.h"
+#include "common/executor.h"
+#include "common/phase.h"
 
 #ifndef TARGET_CC
 #define TARGET_CC "clang"

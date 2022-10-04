@@ -7,8 +7,8 @@
 #include <string>
 #include <vector>
 
-#include "../common/arguments.h"
-#include "../common/logging.h"
+#include "common/arguments.h"
+#include "common/logging.h"
 
 WrapperBase::WrapperBase() {
 #ifndef USE_CXX

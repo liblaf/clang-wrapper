@@ -18,6 +18,5 @@ repos:
     rev: v3.0.0-alpha.0
   - hooks:
       - id: clang-format
-      - id: clang-tidy
     repo: https://github.com/pocc/pre-commit-hooks
     rev: v1.3.5
