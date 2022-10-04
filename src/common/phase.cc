@@ -5,6 +5,29 @@
 #include <string>
 #include <vector>
 
+Phase::Phase(const int id, const std::string& tool, const std::string& input,
+             const std::vector<int>& dependencies, const std::string& output)
+    : id(id),
+      tool(tool),
+      input(input),
+      dependencies(dependencies),
+      output(output) {}
+
+std::string Phase::to_string() const {
+  std::string result = std::to_string(this->id) + ": " + this->tool + ", ";
+  if (this->input.empty()) {
+    result += "{" + std::to_string(this->dependencies.front());
+    for (int i = 1; i < this->dependencies.size(); ++i) {
+      result += ", " + std::to_string(this->dependencies[i]);
+    }
+    result += "}, ";
+  } else {
+    result += "\"" + this->input + "\", ";
+  }
+  result += output;
+  return result;
+}
+
 std::vector<Phase> Phase::parse_phases(const std::string& output) {
   std::vector<Phase> parse_result;
   static const auto& LINE_DELIMITER = std::regex("\\n");
@@ -21,13 +44,12 @@ std::vector<Phase> Phase::parse_phases(const std::string& output) {
   return parse_result;
 }
 
-Phase::Phase(const int id, const std::string& tool, const std::string& input,
-             const std::vector<int>& dependencies, const std::string& output)
-    : id(id),
-      tool(tool),
-      input(input),
-      dependencies(dependencies),
-      output(output) {}
+bool Phase::has_link_stage(const std::vector<Phase>& phases) {
+  for (const auto& phase : phases) {
+    if (phase.tool == "linker") return true;
+  }
+  return false;
+}
 
 Phase Phase::parse_phase(const std::string& line) {
   Phase parse_result;
@@ -64,19 +86,4 @@ Phase Phase::parse_phase(const std::string& line) {
     return parse_result;
   }
   throw std::runtime_error("invalid phase: " + line);
-}
-
-std::string Phase::to_string() const {
-  std::string result = std::to_string(this->id) + ": " + this->tool + ", ";
-  if (this->input.empty()) {
-    result += "{" + std::to_string(this->dependencies.front());
-    for (int i = 1; i < this->dependencies.size(); ++i) {
-      result += ", " + std::to_string(this->dependencies[i]);
-    }
-    result += "}, ";
-  } else {
-    result += "\"" + this->input + "\", ";
-  }
-  result += output;
-  return result;
 }

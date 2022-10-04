@@ -13,7 +13,7 @@
 
 class PassBase {
  public:
-  explicit PassBase(llvm::Module& mod);
+  explicit PassBase(llvm::Module& target);
   virtual ~PassBase();
 
  public:
@@ -23,13 +23,22 @@ class PassBase {
   virtual bool run_on_instruction(llvm::Instruction& inst);
 
  public:
-  llvm::Module& target();
-
- public:
   static std::unique_ptr<llvm::Module> parse_ir_file(
       llvm::StringRef filename, llvm::LLVMContext& context);
   static void write_module(llvm::StringRef filename, llvm::Module& mod);
-  static bool apply_pass(llvm::StringRef filename);
+
+  template <class PassType = PassBase>
+  static bool apply_pass(llvm::StringRef filename) {
+    llvm::LLVMContext context;
+    auto mod = PassType::parse_ir_file(filename, context);
+    auto pass = std::make_unique<PassType>(*mod);
+    bool modified = pass->run_on_module();
+    if (modified) PassType::write_module(filename, *mod);
+    return modified;
+  }
+
+ protected:
+  llvm::Module& target();
 
  public:
   llvm::Module& _target;

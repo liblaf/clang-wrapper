@@ -6,6 +6,6 @@
 
 int main(int argc, char** argv) {
   auto wrapper = std::make_unique<WrapperBase>();
-  int ret = wrapper->compile(argc, argv);
+  int ret = wrapper->compile_c(argc, argv);
   return ret;
 }

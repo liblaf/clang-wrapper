@@ -108,7 +108,7 @@ std::filesystem::path WrapperBase::generate_o(
     const bool enable_debug) {
   if (!output) {
     output = input;
-    output->replace_extension(".ll");
+    output->replace_extension(".o");
   }
   if (disable_optimize) options = Arguments::disable_optimize(options);
   if (enable_debug) options = Arguments::enable_debug(options);
@@ -121,12 +121,12 @@ std::filesystem::path WrapperBase::generate_o(
   return *output;
 }
 
-int WrapperBase::compile(int argc, char** argv) {
+int WrapperBase::compile_c(int argc, char** argv) {
   auto args = Arguments::create_args(argc, argv);
-  return this->compile(args);
+  return this->compile_s(args);
 }
 
-int WrapperBase::compile(std::vector<std::string> args) {
+int WrapperBase::compile_s(std::vector<std::string> args) {
   logger().info("compile(): {}", Arguments::create_command(args));
   args = this->prepare_args(args);
   auto phases = this->get_phases(args);
