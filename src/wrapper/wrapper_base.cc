@@ -53,7 +53,7 @@ std::vector<std::filesystem::path> WrapperBase::get_inputs(
 
 std::vector<std::string> WrapperBase::get_options(
     const std::vector<std::string>& args,
-    const std::vector<std::filesystem::path> inputs) {
+    const std::vector<std::filesystem::path>& inputs) {
   std::vector<std::string> options;
   for (int i = 1; i < args.size(); ++i) {
     const auto& arg = args[i];
