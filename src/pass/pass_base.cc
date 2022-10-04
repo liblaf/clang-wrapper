@@ -1,5 +1,6 @@
 #include "pass_base.h"
 
+#include <cassert>
 #include <memory>
 
 #include "common/logging.h"
@@ -27,6 +28,7 @@ bool PassBase::run_on_module() {
 }
 
 bool PassBase::run_on_function(Function& func) {
+  assert(func.getParent() == (&(this->target())));
   bool modified = false;
   for (auto& block : func) {
     modified |= this->run_on_block(block);
@@ -35,6 +37,7 @@ bool PassBase::run_on_function(Function& func) {
 }
 
 bool PassBase::run_on_block(BasicBlock& block) {
+  assert(block.getModule() == (&(this->target())));
   bool modified = false;
   for (auto& inst : block) {
     modified |= this->run_on_instruction(inst);
@@ -43,6 +46,7 @@ bool PassBase::run_on_block(BasicBlock& block) {
 }
 
 bool PassBase::run_on_instruction(Instruction& block) {
+  assert(block.getModule() == (&(this->target())));
   bool modified = true;
   return modified;
 }
