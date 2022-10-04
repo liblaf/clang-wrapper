@@ -3,12 +3,14 @@
 #include <algorithm>
 #include <cassert>
 #include <cstdlib>
+#include <exception>
 #include <filesystem>
 #include <string>
 #include <vector>
 
 #include "common/arguments.h"
 #include "common/logging.h"
+#include "pass/pass_base.h"
 
 WrapperBase::WrapperBase() {
 #ifndef USE_CXX
@@ -141,10 +143,13 @@ int WrapperBase::compile(std::vector<std::string> args) {
   }
   for (auto& input : inputs) {
     try {
-      auto output = this->generate_ll(options, input);
-      input = output;
+      std::filesystem::path output = this->generate_ll(options, input);
+      bool modified = PassBase::apply_pass(output.string());
+      if (modified) input = output;
     } catch (const int e) {
       logger().error("{} => *.ll failed with exit code {}.", input, e);
+    } catch (const std::exception& e) {
+      logger().error("instrumentation failed: {}", e.what());
     }
   }
   args = this->join_args(options, inputs);

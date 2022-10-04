@@ -43,7 +43,7 @@ link_libraries(${LLVM_LIBS})
 
 aux_source_directory(${CMAKE_SOURCE_DIR}/src/common/ COMMON_SRCS)
 
-list(APPEND BASE_SRCS ${COMMON_SRCS} src/main.cc src/wrapper/wrapper_base.cc)
+list(APPEND BASE_SRCS ${COMMON_SRCS} src/main.cc src/pass/pass_base.cc src/wrapper/wrapper_base.cc)
 add_executable(base ${BASE_SRCS})
 add_executable(base++ ${BASE_SRCS})
 target_compile_definitions(base++ PUBLIC USE_CXX)
