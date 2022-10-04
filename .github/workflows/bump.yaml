@@ -1,0 +1,23 @@
+name: Bump
+
+on:
+  push:
+
+jobs:
+  bump:
+    if: "!startsWith(github.event.head_commit.message, 'ci: bump version')"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.1.0
+      - name: Bump and changelog using commitizen
+        uses: commitizen-tools/commitizen-action@0.14.1
+        id: cz
+        with:
+          github_token: ${{ github.token }}
+          changelog_increment_filename: body.md
+      - name: GH Release
+        uses: softprops/action-gh-release@v0.1.14
+        with:
+          tag_name: ${{ steps.cz.outputs.version }}
+          body_path: body.md
