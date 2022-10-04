@@ -108,7 +108,7 @@ std::filesystem::path WrapperBase::generate_o(
     const bool enable_debug) {
   if (!output) {
     output = input;
-    output->replace_extension(".ll");
+    output->replace_extension(".o");
   }
   if (disable_optimize) options = Arguments::disable_optimize(options);
   if (enable_debug) options = Arguments::enable_debug(options);
