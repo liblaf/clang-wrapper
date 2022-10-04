@@ -15,7 +15,7 @@
 
 using namespace llvm;
 
-PassBase::PassBase(Module& mod) : _target(mod) {}
+PassBase::PassBase(Module& target) : _target(target) {}
 
 PassBase::~PassBase() {}
 
@@ -51,8 +51,6 @@ bool PassBase::run_on_instruction(Instruction& block) {
   return modified;
 }
 
-Module& PassBase::target() { return this->_target; }
-
 std::unique_ptr<Module> PassBase::parse_ir_file(llvm::StringRef filename,
                                                 llvm::LLVMContext& context) {
   SMDiagnostic err;
@@ -86,3 +84,5 @@ bool PassBase::apply_pass(llvm::StringRef filename) {
   if (modified) PassBase::write_module(filename, *mod);
   return modified;
 }
+
+Module& PassBase::target() { return this->_target; }
