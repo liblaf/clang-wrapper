@@ -40,7 +40,7 @@ class PassBase {
  protected:
   llvm::Module& target();
 
- public:
+ private:
   llvm::Module& _target;
 };
 
