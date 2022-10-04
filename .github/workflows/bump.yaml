@@ -2,6 +2,8 @@ name: Bump
 
 on:
   push:
+    branches:
+      - main
 
 jobs:
   bump:
