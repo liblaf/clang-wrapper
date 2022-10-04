@@ -32,7 +32,7 @@ class WrapperBase : public Executor {
       const std::vector<Phase>& phases);
   std::vector<std::string> get_options(
       const std::vector<std::string>& args,
-      const std::vector<std::filesystem::path> inputs);
+      const std::vector<std::filesystem::path>& inputs);
   std::vector<std::string> join_args(
       const std::vector<std::string>& options,
       const std::vector<std::filesystem::path>& inputs);
