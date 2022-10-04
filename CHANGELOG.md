@@ -1,3 +1,9 @@
+## 0.4.2 (2022-10-04)
+
+### Perf
+
+- **base**: use reference for const parameter
+
 ## 0.4.1 (2022-10-04)
 
 ### Fix
