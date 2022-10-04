@@ -78,7 +78,8 @@ Inheritance diagram for WrapperBase:</div>
  <div class="center">
   <img src="classWrapperBase.png" usemap="#WrapperBase_map" alt=""/>
   <map id="WrapperBase_map" name="WrapperBase_map">
-<area href="classExecutor.html" alt="Executor" shape="rect" coords="0,0,89,24"/>
+<area href="classExecutor.html" alt="Executor" shape="rect" coords="0,0,112,24"/>
+<area href="classWrapperCallHook.html" alt="WrapperCallHook" shape="rect" coords="0,112,112,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -102,10 +103,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a5c46fc7e5b880fcfd4fd7db141409c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab290c99d929429d30f19b2ed209f44ba"><td class="memItemLeft" align="right" valign="top">virtual std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWrapperBase.html#ab290c99d929429d30f19b2ed209f44ba">generate_o</a> (std::vector&lt; std::string &gt; options, const std::filesystem::path &amp;input, std::optional&lt; std::filesystem::path &gt; output=std::nullopt, const bool disable_optimize=true, const bool enable_debug=true)</td></tr>
 <tr class="separator:ab290c99d929429d30f19b2ed209f44ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90c0f5a7efdff0c665f6be1b92a9d3d2"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWrapperBase.html#a90c0f5a7efdff0c665f6be1b92a9d3d2">compile</a> (int argc, char **argv)</td></tr>
-<tr class="separator:a90c0f5a7efdff0c665f6be1b92a9d3d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19f62ef28083c9d80ec1767e4d95507b"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWrapperBase.html#a19f62ef28083c9d80ec1767e4d95507b">compile</a> (std::vector&lt; std::string &gt; args)</td></tr>
-<tr class="separator:a19f62ef28083c9d80ec1767e4d95507b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa64af7cb205dc556a6c916641e308ea"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWrapperBase.html#afa64af7cb205dc556a6c916641e308ea">compile_c</a> (int argc, char **argv)</td></tr>
+<tr class="separator:afa64af7cb205dc556a6c916641e308ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78b454996bb79b2758cf137f733e3435"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWrapperBase.html#a78b454996bb79b2758cf137f733e3435">compile_s</a> (std::vector&lt; std::string &gt; args)</td></tr>
+<tr class="separator:a78b454996bb79b2758cf137f733e3435"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1e055c11a7187673a8bbda6cafea398"><td class="memItemLeft" align="right" valign="top">std::filesystem::path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWrapperBase.html#ad1e055c11a7187673a8bbda6cafea398">compiler</a> () const</td></tr>
 <tr class="separator:ad1e055c11a7187673a8bbda6cafea398"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6151ec373dd80143895a3237a2667711"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWrapperBase.html#a6151ec373dd80143895a3237a2667711">set_compiler</a> (const std::filesystem::path &amp;new_compiler)</td></tr>
@@ -199,8 +200,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a90c0f5a7efdff0c665f6be1b92a9d3d2" name="a90c0f5a7efdff0c665f6be1b92a9d3d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90c0f5a7efdff0c665f6be1b92a9d3d2">&#9670;&nbsp;</a></span>compile() <span class="overload">[1/2]</span></h2>
+<a id="afa64af7cb205dc556a6c916641e308ea" name="afa64af7cb205dc556a6c916641e308ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa64af7cb205dc556a6c916641e308ea">&#9670;&nbsp;</a></span>compile_c()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -209,7 +210,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int WrapperBase::compile </td>
+          <td class="memname">int WrapperBase::compile_c </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>argc</em>, </td>
@@ -235,8 +236,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a19f62ef28083c9d80ec1767e4d95507b" name="a19f62ef28083c9d80ec1767e4d95507b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19f62ef28083c9d80ec1767e4d95507b">&#9670;&nbsp;</a></span>compile() <span class="overload">[2/2]</span></h2>
+<a id="a78b454996bb79b2758cf137f733e3435" name="a78b454996bb79b2758cf137f733e3435"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78b454996bb79b2758cf137f733e3435">&#9670;&nbsp;</a></span>compile_s()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -245,7 +246,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int WrapperBase::compile </td>
+          <td class="memname">int WrapperBase::compile_s </td>
           <td>(</td>
           <td class="paramtype">std::vector&lt; std::string &gt;&#160;</td>
           <td class="paramname"><em>args</em></td><td>)</td>
@@ -258,6 +259,8 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classWrapperCallHook.html#a28e30f132904b88e8744036f3158fadf">WrapperCallHook</a>.</p>
 
 </div>
 </div>

@@ -1,9 +1,11 @@
 var searchData=
 [
-  ['read_5fall_0',['read_all',['../classExecutor.html#a66934339f2ecfd4f06825e0034699bab',1,'Executor']]],
-  ['reset_5fcolor_1',['reset_color',['../classLogger.html#a0a684dbf1fa2c67da87604dcabf195f0',1,'Logger']]],
-  ['run_5fon_5fblock_2',['run_on_block',['../classPassBase.html#a4e6a01f37801aa278678b3f40d034199',1,'PassBase']]],
-  ['run_5fon_5ffunction_3',['run_on_function',['../classPassBase.html#a512739c398553b4cb0da2e98110aae1f',1,'PassBase']]],
-  ['run_5fon_5finstruction_4',['run_on_instruction',['../classPassBase.html#a11738779e84b3d57cf0dc15d047594dc',1,'PassBase']]],
-  ['run_5fon_5fmodule_5',['run_on_module',['../classPassBase.html#a8b86d531371e9785c00239696e119a74',1,'PassBase']]]
+  ['parse_5fir_5ffile_0',['parse_ir_file',['../classPassBase.html#a75d271f755f0d3eb5c4e73d951531083',1,'PassBase']]],
+  ['parse_5fphase_1',['parse_phase',['../classPhase.html#aed5759d54cf368ddaef8f74000006b06',1,'Phase']]],
+  ['parse_5fphases_2',['parse_phases',['../classPhase.html#a5527a7f65d35d3ef5731614d72ee9677',1,'Phase']]],
+  ['passbase_3',['PassBase',['../classPassBase.html#a52913a2a0ee95c2174b59224d5c40663',1,'PassBase']]],
+  ['passcallhook_4',['PassCallHook',['../classPassCallHook.html#a7ae70bebd8932ace855c62ce95bf8646',1,'PassCallHook']]],
+  ['phase_5',['Phase',['../classPhase.html#a7b805dfedfba5bf85086b8c11c95c362',1,'Phase']]],
+  ['prepare_5fargs_6',['prepare_args',['../classWrapperBase.html#ab1e7faf7b9825bc19fe17d834dffebd3',1,'WrapperBase']]],
+  ['prepare_5fhooks_7',['prepare_hooks',['../classPassCallHook.html#a3a78bc6405671967022c8c833a0a1b59',1,'PassCallHook']]]
 ];

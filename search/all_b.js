@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main.cc']]],
-  ['main_2ecc_1',['main.cc',['../main_8cc.html',1,'']]]
+  ['join_5fargs_0',['join_args',['../classWrapperBase.html#a84203b17b54d0b1a2c6db52feb702527',1,'WrapperBase']]]
 ];

@@ -66,17 +66,27 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classPassBase-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">PassBase Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="pass__base_8h_source.html">pass_base.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for PassBase:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classPassBase.png" usemap="#PassBase_map" alt=""/>
+  <map id="PassBase_map" name="PassBase_map">
+<area href="classPassCallHook.html" alt="PassCallHook" shape="rect" coords="0,56,90,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af82506fd4e58b8498855fe9da2dc5e48"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPassBase.html#af82506fd4e58b8498855fe9da2dc5e48">PassBase</a> (llvm::Module &amp;mod)</td></tr>
-<tr class="separator:af82506fd4e58b8498855fe9da2dc5e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52913a2a0ee95c2174b59224d5c40663"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPassBase.html#a52913a2a0ee95c2174b59224d5c40663">PassBase</a> (llvm::Module &amp;<a class="el" href="classPassBase.html#a29cfb24980cca45f2aea9379b6ade54e">target</a>)</td></tr>
+<tr class="separator:a52913a2a0ee95c2174b59224d5c40663"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a271b23e1d6e6a541dd8de427abf475"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPassBase.html#a2a271b23e1d6e6a541dd8de427abf475">~PassBase</a> ()</td></tr>
 <tr class="separator:a2a271b23e1d6e6a541dd8de427abf475"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b86d531371e9785c00239696e119a74"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPassBase.html#a8b86d531371e9785c00239696e119a74">run_on_module</a> ()</td></tr>
@@ -87,8 +97,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a4e6a01f37801aa278678b3f40d034199"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11738779e84b3d57cf0dc15d047594dc"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPassBase.html#a11738779e84b3d57cf0dc15d047594dc">run_on_instruction</a> (llvm::Instruction &amp;inst)</td></tr>
 <tr class="separator:a11738779e84b3d57cf0dc15d047594dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29cfb24980cca45f2aea9379b6ade54e"><td class="memItemLeft" align="right" valign="top">llvm::Module &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPassBase.html#a29cfb24980cca45f2aea9379b6ade54e">target</a> ()</td></tr>
-<tr class="separator:a29cfb24980cca45f2aea9379b6ade54e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -96,17 +104,23 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a75d271f755f0d3eb5c4e73d951531083"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89a3efcd7f50df63f1b22619e8f66400"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPassBase.html#a89a3efcd7f50df63f1b22619e8f66400">write_module</a> (llvm::StringRef filename, llvm::Module &amp;mod)</td></tr>
 <tr class="separator:a89a3efcd7f50df63f1b22619e8f66400"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50a2b40815d2415ce9aadcf387970d28"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPassBase.html#a50a2b40815d2415ce9aadcf387970d28">apply_pass</a> (llvm::StringRef filename)</td></tr>
-<tr class="separator:a50a2b40815d2415ce9aadcf387970d28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ce7efb8fc28f00ee848ebff85e85739"><td class="memTemplParams" colspan="2">template&lt;class PassType  = PassBase&gt; </td></tr>
+<tr class="memitem:a1ce7efb8fc28f00ee848ebff85e85739"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classPassBase.html#a1ce7efb8fc28f00ee848ebff85e85739">apply_pass</a> (llvm::StringRef filename)</td></tr>
+<tr class="separator:a1ce7efb8fc28f00ee848ebff85e85739"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a5338ffc14e2d7406123d1775284f858f"><td class="memItemLeft" align="right" valign="top">llvm::Module &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPassBase.html#a5338ffc14e2d7406123d1775284f858f">_target</a></td></tr>
 <tr class="separator:a5338ffc14e2d7406123d1775284f858f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a29cfb24980cca45f2aea9379b6ade54e"><td class="memItemLeft" align="right" valign="top">llvm::Module &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPassBase.html#a29cfb24980cca45f2aea9379b6ade54e">target</a> ()</td></tr>
+<tr class="separator:a29cfb24980cca45f2aea9379b6ade54e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af82506fd4e58b8498855fe9da2dc5e48" name="af82506fd4e58b8498855fe9da2dc5e48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af82506fd4e58b8498855fe9da2dc5e48">&#9670;&nbsp;</a></span>PassBase()</h2>
+<a id="a52913a2a0ee95c2174b59224d5c40663" name="a52913a2a0ee95c2174b59224d5c40663"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52913a2a0ee95c2174b59224d5c40663">&#9670;&nbsp;</a></span>PassBase()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -118,7 +132,7 @@ Public Attributes</h2></td></tr>
           <td class="memname">PassBase::PassBase </td>
           <td>(</td>
           <td class="paramtype">llvm::Module &amp;&#160;</td>
-          <td class="paramname"><em>mod</em></td><td>)</td>
+          <td class="paramname"><em>target</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -157,17 +171,19 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a50a2b40815d2415ce9aadcf387970d28" name="a50a2b40815d2415ce9aadcf387970d28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50a2b40815d2415ce9aadcf387970d28">&#9670;&nbsp;</a></span>apply_pass()</h2>
+<a id="a1ce7efb8fc28f00ee848ebff85e85739" name="a1ce7efb8fc28f00ee848ebff85e85739"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ce7efb8fc28f00ee848ebff85e85739">&#9670;&nbsp;</a></span>apply_pass()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<div class="memtemplate">
+template&lt;class PassType  = PassBase&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool PassBase::apply_pass </td>
+          <td class="memname">static bool PassBase::apply_pass </td>
           <td>(</td>
           <td class="paramtype">llvm::StringRef&#160;</td>
           <td class="paramname"><em>filename</em></td><td>)</td>
@@ -176,7 +192,7 @@ Public Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -295,6 +311,8 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Reimplemented in <a class="el" href="classPassCallHook.html#a569e4e3e29c21b89b5bed2f373b9a514">PassCallHook</a>.</p>
+
 </div>
 </div>
 <a id="a8b86d531371e9785c00239696e119a74" name="a8b86d531371e9785c00239696e119a74"></a>
@@ -327,6 +345,9 @@ Public Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Module &amp; PassBase::target </td>
@@ -335,6 +356,11 @@ Public Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
