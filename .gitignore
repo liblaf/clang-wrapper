@@ -1,14 +1,9 @@
-# build
-bin
-build
-# clangd
 .cache
-compile_commands.json
-# Doxygen
+build
 html
 
-# Created by https://www.toptal.com/developers/gitignore/api/c,c++
-# Edit at https://www.toptal.com/developers/gitignore?templates=c,c++
+# Created by https://www.toptal.com/developers/gitignore/api/c,c++,cmake
+# Edit at https://www.toptal.com/developers/gitignore?templates=c,c++,cmake
 
 ### C ###
 # Prerequisites
@@ -83,4 +78,21 @@ dkms.conf
 
 # Executables
 
-# End of https://www.toptal.com/developers/gitignore/api/c,c++
+### CMake ###
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+### CMake Patch ###
+# External projects
+*-prefix/
+
+# End of https://www.toptal.com/developers/gitignore/api/c,c++,cmake
