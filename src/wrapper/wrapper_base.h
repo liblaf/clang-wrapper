@@ -46,8 +46,8 @@ class WrapperBase : public Executor {
       std::optional<std::filesystem::path> output = std::nullopt,
       const bool disable_optimize = true, const bool enable_debug = true);
 
-  virtual int compile(int argc, char** argv);
-  virtual int compile(std::vector<std::string> args);
+  virtual int compile_c(int argc, char** argv);
+  virtual int compile_s(std::vector<std::string> args);
 
  public:
   std::filesystem::path compiler() const;
