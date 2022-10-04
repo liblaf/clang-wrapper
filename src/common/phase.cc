@@ -44,6 +44,13 @@ std::vector<Phase> Phase::parse_phases(const std::string& output) {
   return parse_result;
 }
 
+bool Phase::has_link_stage(const std::vector<Phase>& phases) {
+  for (const auto& phase : phases) {
+    if (phase.tool == "linker") return true;
+  }
+  return false;
+}
+
 Phase Phase::parse_phase(const std::string& line) {
   Phase parse_result;
   static const auto& INPUT_PATTERN =

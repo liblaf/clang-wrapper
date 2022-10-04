@@ -16,6 +16,7 @@ class Phase {
 
  public:
   static std::vector<Phase> parse_phases(const std::string& output);
+  static bool has_link_stage(const std::vector<Phase>& phases);
 
  protected:
   static Phase parse_phase(const std::string& line);
