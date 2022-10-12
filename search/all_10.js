@@ -1,14 +1,21 @@
 var searchData=
 [
-  ['read_5fall_0',['read_all',['../classExecutor.html#a66934339f2ecfd4f06825e0034699bab',1,'Executor']]],
-  ['reset_5fcolor_1',['reset_color',['../classLogger.html#a0a684dbf1fa2c67da87604dcabf195f0',1,'Logger']]],
-  ['run_5fon_5fblock_2',['run_on_block',['../classPassBase.html#a4e6a01f37801aa278678b3f40d034199',1,'PassBase']]],
-  ['run_5fon_5fcall_5finst_3',['run_on_call_inst',['../classPassCallHook.html#a097d8d50fd18d7e6854dee00cbe73d99',1,'PassCallHook']]],
-  ['run_5fon_5ffunction_4',['run_on_function',['../classPassBase.html#a512739c398553b4cb0da2e98110aae1f',1,'PassBase']]],
-  ['run_5fon_5finstruction_5',['run_on_instruction',['../classPassBase.html#a11738779e84b3d57cf0dc15d047594dc',1,'PassBase::run_on_instruction()'],['../classPassCallHook.html#a569e4e3e29c21b89b5bed2f373b9a514',1,'PassCallHook::run_on_instruction()']]],
-  ['run_5fon_5fmodule_6',['run_on_module',['../classPassBase.html#a8b86d531371e9785c00239696e119a74',1,'PassBase']]],
-  ['runtime_2ec_7',['runtime.c',['../runtime_8c.html',1,'']]],
-  ['runtime_2eh_8',['runtime.h',['../runtime_8h.html',1,'']]],
-  ['runtime_5fc_9',['RUNTIME_C',['../wrapper__call__hook_8h.html#ae3976ef9885865c5a21996e644f3a6f1',1,'wrapper_call_hook.h']]],
-  ['runtime_5fhome_10',['RUNTIME_HOME',['../wrapper__call__hook_8h.html#a2abfdcfd34922000090804368b616c56',1,'wrapper_call_hook.h']]]
+  ['parse_5fir_5ffile_0',['parse_ir_file',['../classPassBase.html#a75d271f755f0d3eb5c4e73d951531083',1,'PassBase']]],
+  ['parse_5fphase_1',['parse_phase',['../classPhase.html#aed5759d54cf368ddaef8f74000006b06',1,'Phase']]],
+  ['parse_5fphases_2',['parse_phases',['../classPhase.html#a5527a7f65d35d3ef5731614d72ee9677',1,'Phase']]],
+  ['pass_5fbase_2ecc_3',['pass_base.cc',['../pass__base_8cc.html',1,'']]],
+  ['pass_5fbase_2eh_4',['pass_base.h',['../pass__base_8h.html',1,'']]],
+  ['pass_5fcall_5fhook_2ecc_5',['pass_call_hook.cc',['../pass__call__hook_8cc.html',1,'']]],
+  ['pass_5fcall_5fhook_2eh_6',['pass_call_hook.h',['../pass__call__hook_8h.html',1,'']]],
+  ['pass_5fstruct_5fparser_2ecc_7',['pass_struct_parser.cc',['../pass__struct__parser_8cc.html',1,'']]],
+  ['pass_5fstruct_5fparser_2eh_8',['pass_struct_parser.h',['../pass__struct__parser_8h.html',1,'']]],
+  ['passbase_9',['PassBase',['../classPassBase.html',1,'PassBase'],['../classPassBase.html#a52913a2a0ee95c2174b59224d5c40663',1,'PassBase::PassBase()']]],
+  ['passcallhook_10',['PassCallHook',['../classPassCallHook.html',1,'PassCallHook'],['../classPassCallHook.html#a7ae70bebd8932ace855c62ce95bf8646',1,'PassCallHook::PassCallHook()']]],
+  ['passstructparser_11',['PassStructParser',['../classPassStructParser.html',1,'PassStructParser'],['../classPassStructParser.html#addb2bcd5f0dc2654deed77befff80d75',1,'PassStructParser::PassStructParser()']]],
+  ['phase_12',['Phase',['../classPhase.html',1,'Phase'],['../classPhase.html#a7b805dfedfba5bf85086b8c11c95c362',1,'Phase::Phase()']]],
+  ['phase_2ecc_13',['phase.cc',['../phase_8cc.html',1,'']]],
+  ['phase_2eh_14',['phase.h',['../phase_8h.html',1,'']]],
+  ['prepare_5fargs_15',['prepare_args',['../classWrapperBase.html#ab1e7faf7b9825bc19fe17d834dffebd3',1,'WrapperBase']]],
+  ['prepare_5fhooks_16',['prepare_hooks',['../classPassCallHook.html#a3a78bc6405671967022c8c833a0a1b59',1,'PassCallHook']]],
+  ['probe_5ftype_17',['probe_type',['../classStructParser.html#af85891bd10dde5b49392d4a651e31536',1,'StructParser']]]
 ];

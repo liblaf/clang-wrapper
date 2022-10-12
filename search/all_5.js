@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['debug_0',['debug',['../classLogger.html#af6498b8673a55fd3cfa7c1513d4f4bd6',1,'Logger']]],
+  ['debug_0',['debug',['../classLogger.html#aacdddfb1dae4e6a2a50db2c3993ebd69',1,'Logger']]],
   ['declaration_1',['declaration',['../classPassCallHook.html#a5b0398bb5f4d05e3b9aa821f987e5ab3',1,'PassCallHook']]],
   ['declaration_2ec_2',['declaration.c',['../declaration_8c.html',1,'']]],
   ['declaration_2eh_3',['declaration.h',['../declaration_8h.html',1,'']]],

@@ -7,5 +7,7 @@ var searchData=
   ['_5fdeclaration_4',['_declaration',['../classPassCallHook.html#a5af47865fe23070fa4a91f6e7ff0138f',1,'PassCallHook']]],
   ['_5flog_5flevel_5',['_log_level',['../classLogger.html#a18fc7da863eed4229b8be048790a0e6a',1,'Logger']]],
   ['_5flogger_6',['_logger',['../logging_8cc.html#af920ef21446ff14f0a1e0e414eb36e94',1,'logging.cc']]],
-  ['_5ftarget_7',['_target',['../classPassBase.html#a5338ffc14e2d7406123d1775284f858f',1,'PassBase']]]
+  ['_5fstruct_5fparser_7',['_struct_parser',['../classPassStructParser.html#aee8db5c126ab6fe48bb9842a5fc403fa',1,'PassStructParser']]],
+  ['_5ftarget_8',['_target',['../classPassBase.html#a5338ffc14e2d7406123d1775284f858f',1,'PassBase::_target()'],['../classStructParser.html#af507d88e501c93f4eaa278633eaadeaf',1,'StructParser::_target()']]],
+  ['_5ftype_5fmap_9',['_type_map',['../classStructParser.html#ac146990d8b903f6538253c37090e6470',1,'StructParser']]]
 ];

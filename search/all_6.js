@@ -3,7 +3,7 @@ var searchData=
   ['enable_5fdebug_0',['enable_debug',['../classArguments.html#abbbf6cf92e824f8ebd391ba9c9b85137',1,'Arguments']]],
   ['env_2ecc_1',['env.cc',['../env_8cc.html',1,'']]],
   ['env_2eh_2',['env.h',['../env_8h.html',1,'']]],
-  ['error_3',['error',['../classLogger.html#a01b249a8119979c53e25a93d49a0c9ee',1,'Logger']]],
+  ['error_3',['error',['../classLogger.html#a5b8d37f62c689af1850457d0ea997cd3',1,'Logger']]],
   ['escape_4',['escape',['../classArguments.html#a4373f88c6ab682bccde44d9accdf9c10',1,'Arguments']]],
   ['exec_5fexec_5',['exec_exec',['../classExecutor.html#aaa97333974b88f88d2a5e01550b7ce4c',1,'Executor::exec_exec(int argc, char **argv)'],['../classExecutor.html#ac866330de3864c0b2f2018621efe1c11',1,'Executor::exec_exec(const std::vector&lt; std::string &gt; &amp;args)']]],
   ['exec_5ffork_6',['exec_fork',['../classExecutor.html#a228d157b41e302365fd966af892b82d2',1,'Executor::exec_fork(int argc, char **argv)'],['../classExecutor.html#a0afd65e8d3bcb7510c398fccc04f2154',1,'Executor::exec_fork(const std::vector&lt; std::string &gt; &amp;args)']]],
