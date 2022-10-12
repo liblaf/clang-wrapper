@@ -40,7 +40,8 @@ class WrapperBase : public Executor {
   virtual std::filesystem::path generate_ll(
       std::vector<std::string> options, const std::filesystem::path& input,
       std::optional<std::filesystem::path> output = std::nullopt,
-      const bool disable_optimize = true, const bool enable_debug = true);
+      const bool disable_optimize = true, const bool enable_debug = true,
+      const bool no_opaque_pointers = true);
   virtual std::filesystem::path generate_o(
       std::vector<std::string> options, const std::filesystem::path& input,
       std::optional<std::filesystem::path> output = std::nullopt,

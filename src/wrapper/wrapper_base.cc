@@ -43,7 +43,8 @@ std::vector<std::filesystem::path> WrapperBase::get_inputs(
   std::vector<std::filesystem::path> inputs;
   for (const auto& phase : phases) {
     if ((phase.tool == "input") &&
-        ((phase.output == "c") || (phase.output == "c++"))) {
+        ((phase.output == "c") || (phase.output == "c++") ||
+         (phase.output == "ir"))) {
       assert(std::filesystem::exists(phase.input));
       inputs.push_back(phase.input);
     }
@@ -85,13 +86,15 @@ std::vector<std::string> WrapperBase::join_args(
 std::filesystem::path WrapperBase::generate_ll(
     std::vector<std::string> options, const std::filesystem::path& input,
     std::optional<std::filesystem::path> output, const bool disable_optimize,
-    const bool enable_debug) {
+    const bool enable_debug, const bool no_opaque_pointers) {
   if (!output) {
     output = input;
     output->replace_extension(".ll");
   }
+  if (input == *output) return *output;
   if (disable_optimize) options = Arguments::disable_optimize(options);
   if (enable_debug) options = Arguments::enable_debug(options);
+  if (no_opaque_pointers) options = Arguments::no_opaque_pointers(options);
   options.push_back("--assemble");
   options.push_back("-emit-llvm");
   options.push_back("--output");
@@ -110,6 +113,7 @@ std::filesystem::path WrapperBase::generate_o(
     output = input;
     output->replace_extension(".o");
   }
+  if (input == *output) return *output;
   if (disable_optimize) options = Arguments::disable_optimize(options);
   if (enable_debug) options = Arguments::enable_debug(options);
   options.push_back("--compile");
