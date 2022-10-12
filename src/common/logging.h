@@ -28,7 +28,7 @@ class Logger : public llvm::raw_fd_ostream {
 
  public:
   template <class... Args>
-  Logger& critical(const char* fmt, Args... args) {
+  Logger& critical(const char* fmt, Args&&... args) {
     if (this->log_level() > LOG_LEVEL_CRITICAL) return *this;
     this->change_color(llvm::raw_ostream::Colors::RED, /*bold=*/true);
     this->log("{}", Logger::get_prompt("CRITICAL"));
@@ -39,7 +39,7 @@ class Logger : public llvm::raw_fd_ostream {
   }
 
   template <class... Args>
-  Logger& error(const char* fmt, Args... args) {
+  Logger& error(const char* fmt, Args&&... args) {
     if (this->log_level() > LOG_LEVEL_INFO) return *this;
     this->change_color(llvm::raw_ostream::Colors::RED);
     this->log("{}", Logger::get_prompt("ERROR"));
@@ -50,7 +50,7 @@ class Logger : public llvm::raw_fd_ostream {
   }
 
   template <class... Args>
-  Logger& warning(const char* fmt, Args... args) {
+  Logger& warning(const char* fmt, Args&&... args) {
     if (this->log_level() > LOG_LEVEL_INFO) return *this;
     this->change_color(llvm::raw_ostream::Colors::YELLOW, /*bold=*/true);
     this->log("{}", Logger::get_prompt("WARNING"));
@@ -61,7 +61,7 @@ class Logger : public llvm::raw_fd_ostream {
   }
 
   template <class... Args>
-  Logger& info(const char* fmt, Args... args) {
+  Logger& info(const char* fmt, Args&&... args) {
     if (this->log_level() > LOG_LEVEL_INFO) return *this;
     this->change_color(llvm::raw_ostream::Colors::BLUE);
     this->log("{}", Logger::get_prompt("INFO"));
@@ -72,7 +72,7 @@ class Logger : public llvm::raw_fd_ostream {
   }
 
   template <class... Args>
-  Logger& debug(const char* fmt, Args... args) {
+  Logger& debug(const char* fmt, Args&&... args) {
     if (this->log_level() > LOG_LEVEL_INFO) return *this;
     this->log("{}", Logger::get_prompt("DEBUG"));
     this->log(fmt, args...);
@@ -89,7 +89,7 @@ class Logger : public llvm::raw_fd_ostream {
 
  protected:
   template <class T, class... Args>
-  Logger& log(const char* fmt, T&& value, Args... args) {
+  Logger& log(const char* fmt, T&& value, Args&&... args) {
     for (; (*fmt) != '\0'; ++fmt) {
       if ((*fmt) == '{') {
         ++fmt;
