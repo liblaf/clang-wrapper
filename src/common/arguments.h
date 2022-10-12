@@ -20,6 +20,8 @@ class Arguments {
       std::vector<std::string> options);
   static std::vector<std::string> enable_debug(
       std::vector<std::string> options);
+  static std::vector<std::string> no_opaque_pointers(
+      std::vector<std::string> options);
 };
 
 #endif  // ARGUMENTS_H_

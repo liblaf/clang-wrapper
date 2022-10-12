@@ -62,3 +62,12 @@ std::vector<std::string> Arguments::enable_debug(
   options.push_back("--debug");
   return options;
 }
+
+std::vector<std::string> Arguments::no_opaque_pointers(
+    std::vector<std::string> options) {
+#if __clang_major__ >= 14
+  options.push_back("-Xclang");
+  options.push_back("-no-opaque-pointers");
+#endif
+  return options;
+}
