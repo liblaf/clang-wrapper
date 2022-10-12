@@ -1,3 +1,17 @@
+## 0.5.0 (2022-10-12)
+
+### Feat
+
+- add struct-parser
+- **common**: add `no_opaque_pointers` option
+- **wrapper**: add `no_opaque_pointers` option
+
+### Fix
+
+- **pass**: fix include error
+- **pass**: fix `run_on_instruction()`
+- **common**: fix logging args
+
 ## 0.4.2 (2022-10-04)
 
 ### Perf
