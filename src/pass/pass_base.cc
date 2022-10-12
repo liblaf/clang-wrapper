@@ -45,9 +45,9 @@ bool PassBase::run_on_block(BasicBlock& block) {
   return modified;
 }
 
-bool PassBase::run_on_instruction(Instruction& block) {
-  assert(block.getModule() == (&(this->target())));
-  bool modified = true;
+bool PassBase::run_on_instruction(Instruction& inst) {
+  assert(inst.getModule() == (&(this->target())));
+  bool modified = false;
   return modified;
 }
 
