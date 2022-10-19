@@ -21,6 +21,7 @@ class Arguments : public std::vector<std::string> {
   static Arguments enable_debug(Arguments options);
   static Arguments no_opaque_pointers(Arguments options);
   static Arguments suppress_warnings(Arguments options);
+  static Arguments remove_stdc(Arguments options);
 };
 
 #endif  // ARGUMENTS_H_

@@ -18,9 +18,9 @@
 WrapperBase::WrapperBase() {
 #ifndef USE_CXX
   this->set_compiler(WrapperBase::get_cc());
-#else
+#else   // USE_CXX
   this->set_compiler(WrapperBase::get_cxx());
-#endif
+#endif  // USE_CXX
 }
 
 WrapperBase::~WrapperBase() {}
@@ -30,6 +30,9 @@ auto WrapperBase::prepare_args(Arguments args)
   auto phases = this->get_phases(args);
   auto inputs = this->get_inputs(phases);
   auto options = this->get_options(args, inputs);
+#ifdef USE_CXX
+  options = Arguments::remove_stdc(options);
+#endif  // USE_CXX
   options = Arguments::suppress_warnings(options);
   return std::make_tuple(phases, inputs, options);
 }

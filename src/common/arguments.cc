@@ -66,11 +66,23 @@ Arguments Arguments::no_opaque_pointers(Arguments options) {
 #if __clang_major__ >= 14
   options.push_back("-Xclang");
   options.push_back("-no-opaque-pointers");
-#endif
+#endif  // __clang_major__ >= 14
   return options;
 }
 
 Arguments Arguments::suppress_warnings(Arguments options) {
   options.push_back("--no-warnings");
+  return options;
+}
+
+Arguments Arguments::remove_stdc(Arguments options) {
+  static const auto PATTERN = std::regex("-std=c\\d.*");
+  for (int i = 0; i < options.size(); ++i) {
+    std::smatch res;
+    std::regex_match(options[i], res, PATTERN);
+    if (res.empty()) continue;
+    options.erase(options.begin() + i);
+    --i;
+  }
   return options;
 }
