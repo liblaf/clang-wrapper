@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logger_0',['Logger',['../classLogger.html',1,'']]]
+  ['jniinterfacedetector_0',['JNIInterfaceDetector',['../classJNIInterfaceDetector.html',1,'']]]
 ];

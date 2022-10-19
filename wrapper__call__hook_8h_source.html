@@ -72,24 +72,27 @@ $(function() {
 <a href="wrapper__call__hook_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef WRAPPER_CALL_HOOK_H_</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define WRAPPER_CALL_HOOK_H_</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="wrapper__base_8h.html">wrapper_base.h</a>&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef RUNTIME_HOME</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="wrapper__call__hook_8h.html#a2abfdcfd34922000090804368b616c56">    7</a></span><span class="preprocessor">#define RUNTIME_HOME &quot;src/runtime/call_hook&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#endif  </span><span class="comment">// RUNTIME_HOME</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="wrapper__call__hook_8h.html#ae3976ef9885865c5a21996e644f3a6f1">   10</a></span><span class="preprocessor">#define RUNTIME_C RUNTIME_HOME &quot;/runtime.c&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="wrapper__call__hook_8h.html#ae0c33f3d3ca8c580233a5488ba9565a3">   11</a></span><span class="preprocessor">#define DECLARATION_C RUNTIME_HOME &quot;/declaration.c&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classWrapperCallHook.html">   13</a></span><span class="keyword">class </span><a class="code hl_class" href="classWrapperCallHook.html">WrapperCallHook</a> : <span class="keyword">public</span> <a class="code hl_class" href="classWrapperBase.html">WrapperBase</a> {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classWrapperCallHook.html#a28e30f132904b88e8744036f3158fadf">compile_s</a>(std::vector&lt;std::string&gt; args) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>};</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#endif  </span><span class="comment">// WRAPPER_CALL_HOOK_H_</span></div>
-<div class="ttc" id="aclassWrapperBase_html"><div class="ttname"><a href="classWrapperBase.html">WrapperBase</a></div><div class="ttdef"><b>Definition:</b> wrapper_base.h:22</div></div>
-<div class="ttc" id="aclassWrapperCallHook_html"><div class="ttname"><a href="classWrapperCallHook.html">WrapperCallHook</a></div><div class="ttdef"><b>Definition:</b> wrapper_call_hook.h:13</div></div>
-<div class="ttc" id="aclassWrapperCallHook_html_a28e30f132904b88e8744036f3158fadf"><div class="ttname"><a href="classWrapperCallHook.html#a28e30f132904b88e8744036f3158fadf">WrapperCallHook::compile_s</a></div><div class="ttdeci">virtual int compile_s(std::vector&lt; std::string &gt; args) override</div><div class="ttdef"><b>Definition:</b> wrapper_call_hook.cc:8</div></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="arguments_8h.html">common/arguments.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="wrapper__base_8h.html">wrapper_base.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#ifndef RUNTIME_HOME</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="wrapper__call__hook_8h.html#a2abfdcfd34922000090804368b616c56">    8</a></span><span class="preprocessor">#define RUNTIME_HOME &quot;src/runtime/call_hook&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#endif  </span><span class="comment">// RUNTIME_HOME</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="wrapper__call__hook_8h.html#ae3976ef9885865c5a21996e644f3a6f1">   11</a></span><span class="preprocessor">#define RUNTIME_C RUNTIME_HOME &quot;/runtime.c&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="wrapper__call__hook_8h.html#ae0c33f3d3ca8c580233a5488ba9565a3">   12</a></span><span class="preprocessor">#define DECLARATION_C RUNTIME_HOME &quot;/declaration.c&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classWrapperCallHook.html">   14</a></span><span class="keyword">class </span><a class="code hl_class" href="classWrapperCallHook.html">WrapperCallHook</a> : <span class="keyword">public</span> <a class="code hl_class" href="classWrapperBase.html">WrapperBase</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classWrapperCallHook.html#a8dd6036566831d9c094b513679e6cd25">compile_s</a>(<a class="code hl_class" href="classArguments.html">Arguments</a> args) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>};</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#endif  </span><span class="comment">// WRAPPER_CALL_HOOK_H_</span></div>
+<div class="ttc" id="aarguments_8h_html"><div class="ttname"><a href="arguments_8h.html">arguments.h</a></div></div>
+<div class="ttc" id="aclassArguments_html"><div class="ttname"><a href="classArguments.html">Arguments</a></div><div class="ttdef"><b>Definition:</b> arguments.h:7</div></div>
+<div class="ttc" id="aclassWrapperBase_html"><div class="ttname"><a href="classWrapperBase.html">WrapperBase</a></div><div class="ttdef"><b>Definition:</b> wrapper_base.h:25</div></div>
+<div class="ttc" id="aclassWrapperCallHook_html"><div class="ttname"><a href="classWrapperCallHook.html">WrapperCallHook</a></div><div class="ttdef"><b>Definition:</b> wrapper_call_hook.h:14</div></div>
+<div class="ttc" id="aclassWrapperCallHook_html_a8dd6036566831d9c094b513679e6cd25"><div class="ttname"><a href="classWrapperCallHook.html#a8dd6036566831d9c094b513679e6cd25">WrapperCallHook::compile_s</a></div><div class="ttdeci">virtual int compile_s(Arguments args) override</div><div class="ttdef"><b>Definition:</b> wrapper_call_hook.cc:10</div></div>
 <div class="ttc" id="awrapper__base_8h_html"><div class="ttname"><a href="wrapper__base_8h.html">wrapper_base.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['info_0',['info',['../classLogger.html#ad02cd3194e60576ff6cca003e63e639f',1,'Logger']]]
+  ['has_5flink_5fstage_0',['has_link_stage',['../classPhase.html#a4c2db5e1716673ddbc12bd2499b0eaad',1,'Phase']]]
 ];
