@@ -22,6 +22,7 @@ target_compile_definitions(call-hook++ PUBLIC RUNTIME_HOME="${CMAKE_SOURCE_DIR}/
 target_compile_definitions(call-hook++ PUBLIC USE_CXX)
 
 list(APPEND STRUCT_PARSER_SRCS ${BASE_SRCS} src/pass/pass_struct_parser.cc src/wrapper/wrapper_struct_parser.cc src/utility/struct_parser.cc)
+list(APPEND STRUCT_PARSER_SRCS src/utility/location.cc)
 add_executable(struct-parser   ${STRUCT_PARSER_SRCS} src/main/struct_parser.cc)
 add_executable(struct-parser++ ${STRUCT_PARSER_SRCS} src/main/struct_parser.cc)
 target_compile_definitions(struct-parser++ PUBLIC USE_CXX)

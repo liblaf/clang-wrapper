@@ -5,6 +5,7 @@
 #include "common/logging.h"
 #include "llvm/IR/Instructions.h"
 #include "pass/pass_base.h"
+#include "utility/location.h"
 #include "utility/struct_parser.h"
 
 using namespace llvm;
@@ -32,6 +33,7 @@ bool PassStructParser::run_on_load_inst(LoadInst& inst) {
   bool modified = false;
   auto name = this->struct_parser().get_field_name_from_value(inst);
   if (name.empty()) return modified;
+  logger().info("at {}", get_inst_loc(inst));
   logger().info("{}: {}", name, inst);
   return modified;
 }
@@ -40,6 +42,7 @@ bool PassStructParser::run_on_get_element_ptr_inst(GetElementPtrInst& inst) {
   bool modified = false;
   auto name = this->struct_parser().get_field_name_from_address(inst);
   if (name.empty()) return modified;
+  logger().info("at {}", get_inst_loc(inst));
   logger().info("{}: {}", name, inst);
   return modified;
 }
