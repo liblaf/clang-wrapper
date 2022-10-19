@@ -1,15 +1,14 @@
 #include "wrapper_call_hook.h"
 
+#include "common/arguments.h"
 #include "common/env.h"
 #include "common/logging.h"
+#include "common/path.h"
 #include "common/phase.h"
 #include "pass/pass_call_hook.h"
 
-int WrapperCallHook::compile_s(std::vector<std::string> args) {
-  args = this->prepare_args(args);
-  auto phases = this->get_phases(args);
-  auto inputs = this->get_inputs(phases);
-  auto options = this->get_options(args, inputs);
+int WrapperCallHook::compile_s(Arguments args) {
+  auto [phases, inputs, options] = this->prepare_args(args);
 
   auto has_link_stage = Phase::has_link_stage(phases);
   auto declaration_c = get_env("DECLARATION_C", DECLARATION_C);
@@ -19,7 +18,7 @@ int WrapperCallHook::compile_s(std::vector<std::string> args) {
 
   for (auto& input : inputs) {
     try {
-      std::filesystem::path output = this->generate_ll(options, input);
+      fs::path output = this->generate_ll(options, input);
       bool modified =
           PassCallHook::apply_pass(output.string(), declaration_ll.string());
       if (modified) input = output;

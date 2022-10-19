@@ -1,19 +1,18 @@
 #include "wrapper_struct_parser.h"
 
+#include "common/arguments.h"
 #include "common/env.h"
 #include "common/logging.h"
+#include "common/path.h"
 #include "common/phase.h"
 #include "pass/pass_struct_parser.h"
 
-int WrapperStructParser::compile_s(std::vector<std::string> args) {
-  args = this->prepare_args(args);
-  auto phases = this->get_phases(args);
-  auto inputs = this->get_inputs(phases);
-  auto options = this->get_options(args, inputs);
+int WrapperStructParser::compile_s(Arguments args) {
+  auto [phases, inputs, options] = this->prepare_args(args);
 
   for (auto& input : inputs) {
     try {
-      std::filesystem::path output = this->generate_ll(options, input);
+      fs::path output = this->generate_ll(options, input);
       bool modified = PassStructParser::apply_pass(output.string());
       if (modified) input = output;
     } catch (const int e) {

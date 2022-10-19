@@ -1,6 +1,7 @@
 #ifndef WRAPPER_CALL_HOOK_H_
 #define WRAPPER_CALL_HOOK_H_
 
+#include "common/arguments.h"
 #include "wrapper_base.h"
 
 #ifndef RUNTIME_HOME
@@ -12,7 +13,7 @@
 
 class WrapperCallHook : public WrapperBase {
  public:
-  virtual int compile_s(std::vector<std::string> args) override;
+  virtual int compile_s(Arguments args) override;
 };
 
 #endif  // WRAPPER_CALL_HOOK_H_
