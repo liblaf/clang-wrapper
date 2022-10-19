@@ -8,53 +8,67 @@ TARGET_LLVM_HOME="${TARGET_LLVM_HOME:-"${ANDROID_NDK}/toolchains/llvm/prebuilt/l
 TARGET_CC="${TARGET_CC:-"${TARGET_LLVM_HOME}/bin/clang.bak"}"
 TARGET_CXX="${TARGET_CXX:-"${TARGET_LLVM_HOME}/bin/clang++.bak"}"
 
-reset=$'\x1b[0m'
-bold=$'\x1b[1m'
-underline=$'\x1b[4m'
-red=$'\x1b[31m'
+function underline() {
+  echo -n $'\x1b[4m'
+  echo -n "${@}"
+  echo $'\x1b[24m'
+}
+
+function error() {
+  echo -n $'\x1b[1;91m'
+  echo -n "${@}"
+  echo $'\x1b[0m'
+}
+
+function info() {
+  echo -n $'\x1b[94m'
+  echo -n "${@}"
+  echo $'\x1b[0m'
+}
+
+function copy() {
+  info "$(underline "${1}") => $(underline "${2}")"
+  cp "${1}" "${2}"
+}
 
 function backup-clang() {
   if [[ ! -e "${TARGET_CC}" ]]; then
-    echo "${underline}${TARGET_LLVM_HOME}/bin/clang${reset} => ${underline}${TARGET_CC}${reset}"
-    cp "${TARGET_LLVM_HOME}/bin/clang" "${TARGET_CC}"
+    copy "${TARGET_LLVM_HOME}/bin/clang" "${TARGET_CC}"
   else
-    echo "${underline}${TARGET_CC}${reset} alreadly backed up"
+    info "$(underline "${TARGET_CC}") alreadly backed up"
   fi
   if [[ ! -e "${TARGET_CXX}" ]]; then
-    echo "${underline}${TARGET_LLVM_HOME}/bin/clang++${reset} => ${underline}${TARGET_CXX}${reset}"
-    cp "${TARGET_LLVM_HOME}/bin/clang++" "${TARGET_CXX}"
+    copy "${TARGET_LLVM_HOME}/bin/clang++" "${TARGET_CXX}"
   else
-    echo "${underline}${TARGET_CXX}${reset} alreadly backed up"
+    info "$(underline "${TARGET_CXX}") alreadly backed up"
   fi
 }
 
 function recover-clang() {
   if [[ -e "${TARGET_CC}" ]]; then
-    echo "${underline}${TARGET_CC}${reset} => ${underline}${TARGET_LLVM_HOME}/bin/clang${reset}"
-    cp "${TARGET_CC}" "${TARGET_LLVM_HOME}/bin/clang"
+    copy "${TARGET_CC}" "${TARGET_LLVM_HOME}/bin/clang"
   else
-    echo "${bold}${red}${TARGET_CC} not found${reset}"
+    error "${TARGET_CC} not found"
   fi
   if [[ -e "${TARGET_CXX}" ]]; then
-    echo "${underline}${TARGET_CXX}${reset} => ${underline}${TARGET_LLVM_HOME}/bin/clang++${reset}"
-    cp "${TARGET_CXX}" "${TARGET_LLVM_HOME}/bin/clang"
+    copy "${TARGET_CXX}" "${TARGET_LLVM_HOME}/bin/clang"
   else
-    echo "${bold}${red}${TARGET_CXX} not found${reset}"
+    error "${TARGET_CXX} not found"
   fi
 }
 
 function build() {
   backup-clang
-  cmake -S "${WRAPPER_HOME}" -B "${WRAPPER_HOME}/build" --fresh \
-    -DCMAKE_BUILD_TYPE=release \
+  cmake -S "${WRAPPER_HOME}" -B "${WRAPPER_HOME}/build" \
     -DASAN=OFF \
-    -DNDK=ON \
+    -DCMAKE_BUILD_TYPE=release \
     -DLOG_LEVEL=OFF \
+    -DNDK=ON \
     -DTARGET_CC="${TARGET_CC}" \
     -DTARGET_CXX="${TARGET_CXX}"
   make --directory "${WRAPPER_HOME}/build" --jobs
-  cp "${WRAPPER_HOME}/build/base" "${TARGET_LLVM_HOME}/bin/clang"
-  cp "${WRAPPER_HOME}/build/base++" "${TARGET_LLVM_HOME}/bin/clang++"
+  copy "${WRAPPER_HOME}/build/base" "${TARGET_LLVM_HOME}/bin/clang"
+  copy "${WRAPPER_HOME}/build/base++" "${TARGET_LLVM_HOME}/bin/clang++"
 }
 
 case "${1:-"build"}" in
