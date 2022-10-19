@@ -12,22 +12,22 @@
 #include "logging.h"
 
 int Executor::exec_exec(int argc, char **argv) {
-  logger().info("execvp(): {}", Arguments::create_command(argc, argv));
+  logger().info("execvp(): {}", Arguments::command(argc, argv));
   int status = execvp(argv[0], argv);
   perror("execvp()");
   return status;
 }
 
-int Executor::exec_exec(const std::vector<std::string> &args) {
+int Executor::exec_exec(const Arguments &args) {
   int argc = args.size();
-  char **argv = Arguments::create_argv(args);
+  char **argv = args.argv();
   int status = Executor::exec_exec(argc, argv);
   Arguments::free_argv(argc, argv);
   return status;
 }
 
 int Executor::exec_fork(int argc, char **argv) {
-  logger().info("fork(): {}", Arguments::create_command(argc, argv));
+  logger().info("fork(): {}", Arguments::command(argc, argv));
   pid_t pid = fork();
   if (pid < 0) {
     perror("fork()");
@@ -51,22 +51,21 @@ int Executor::exec_fork(int argc, char **argv) {
   }
 }
 
-int Executor::exec_fork(const std::vector<std::string> &args) {
+int Executor::exec_fork(const Arguments &args) {
   int argc = args.size();
-  char **argv = Arguments::create_argv(args);
+  char **argv = args.argv();
   int return_value = Executor::exec_fork(argc, argv);
   Arguments::free_argv(argc, argv);
   return return_value;
 }
 
 FILE *Executor::exec_popen(int argc, char **argv, const bool redirect_stderr) {
-  const auto &args = Arguments::create_args(argc, argv);
+  const auto &args = Arguments(argc, argv);
   return Executor::exec_popen(args, redirect_stderr);
 }
 
-FILE *Executor::exec_popen(const std::vector<std::string> &args,
-                           const bool redirect_stderr) {
-  auto command = Arguments::create_command(args);
+FILE *Executor::exec_popen(const Arguments &args, const bool redirect_stderr) {
+  auto command = args.command();
   if (redirect_stderr) {
     command += " 2>&1";
   }
@@ -95,12 +94,12 @@ int Executor::exec_pclose(FILE *stream) {
 }
 
 int Executor::exec_system(int argc, char **argv) {
-  const auto &args = Arguments::create_args(argc, argv);
+  const auto &args = Arguments(argc, argv);
   return Executor::exec_system(args);
 }
 
-int Executor::exec_system(const std::vector<std::string> &args) {
-  auto command = Arguments::create_command(args);
+int Executor::exec_system(const Arguments &args) {
+  auto command = args.command();
   logger().info("system(): {}", command);
   int status = system(command.c_str());
   if (status < 0) {
