@@ -1,5 +1,6 @@
 .cache
 *.ll
+*.log
 build
 html
 
