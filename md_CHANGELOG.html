@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Clang Wrapper: 0.5.0 (2022-10-12)</title>
+<title>Clang Wrapper: 0.6.0 (2022-10-19)</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,55 +62,80 @@ $(function() {
 
 </div><!-- top -->
 <div><div class="header">
-  <div class="headertitle"><div class="title">0.5.0 (2022-10-12) </div></div>
+  <div class="headertitle"><div class="title">0.6.0 (2022-10-19) </div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h2><a class="anchor" id="autotoc_md1"></a>
+Feat</h2>
+<ul>
+<li><b>utility</b>: add location utility</li>
+<li><b>common</b>: remove stdc option when using c++</li>
+<li><b>utility</b>: add JNI Interface Detector</li>
+<li>add assertion utility for debug</li>
+<li><b>common</b>: add path utility for compatibility</li>
+<li><b>common</b>: implement class <code><a class="el" href="classArguments.html">Arguments</a></code></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Fix</h2>
+<ul>
+<li><b>scripts</b>: pretty output</li>
+<li><b>utility</b>: fix <code>get_gep_index()</code></li>
+<li><b>common</b>: change string vector to <code><a class="el" href="classArguments.html">Arguments</a></code></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Refactor</h2>
+<ul>
+<li><b>runtime</b>: move files</li>
+<li><b>wrapper</b>: refine code</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md4"></a>
+0.5.0 (2022-10-12)</h1>
+<h2><a class="anchor" id="autotoc_md5"></a>
 Feat</h2>
 <ul>
 <li>add struct-parser</li>
 <li><b>common</b>: add <code>no_opaque_pointers</code> option</li>
 <li><b>wrapper</b>: add <code>no_opaque_pointers</code> option</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md2"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 Fix</h2>
 <ul>
 <li><b>pass</b>: fix include error</li>
 <li><b>pass</b>: fix <code>run_on_instruction()</code></li>
 <li><b>common</b>: fix logging args</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md7"></a>
 0.4.2 (2022-10-04)</h1>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 Perf</h2>
 <ul>
 <li><b>base</b>: use reference for const parameter</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md5"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
 0.4.1 (2022-10-04)</h1>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 Fix</h2>
 <ul>
 <li><b>base</b>: hide member data from direct access</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md7"></a>
+<h1><a class="anchor" id="autotoc_md11"></a>
 0.4.0 (2022-10-04)</h1>
-<h1><a class="anchor" id="autotoc_md8"></a>
+<h1><a class="anchor" id="autotoc_md12"></a>
 0.3.0 (2022-10-04)</h1>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 Feat</h2>
 <ul>
 <li><b>call-hook</b>: add call-hook wrapper</li>
 <li><b>common</b>: add utility <code>env</code></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md14"></a>
 Fix</h2>
 <ul>
 <li><b>base</b>: fix generated object extension</li>
 <li><b>common</b>: add utility <code>has_link_stage()</code></li>
 <li><b>base</b>: add assertion</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 Refactor</h2>
 <ul>
 <li><b>base</b>: improve file structure</li>
@@ -118,21 +143,21 @@ Refactor</h2>
 <li><b>base</b>: improve extensibility</li>
 <li><b>base</b>: improvements</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md12"></a>
+<h1><a class="anchor" id="autotoc_md16"></a>
 0.2.0 (2022-10-04)</h1>
-<h2><a class="anchor" id="autotoc_md13"></a>
+<h2><a class="anchor" id="autotoc_md17"></a>
 Feat</h2>
 <ul>
 <li><b>base</b>: add <code><a class="el" href="classPassBase.html">PassBase</a></code></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md18"></a>
 Fix</h2>
 <ul>
 <li><b>bump</b>: fix "No tag found to do an incremental changelog"</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md15"></a>
+<h1><a class="anchor" id="autotoc_md19"></a>
 0.1.0 (2022-10-02)</h1>
-<h2><a class="anchor" id="autotoc_md16"></a>
+<h2><a class="anchor" id="autotoc_md20"></a>
 Feat</h2>
 <ul>
 <li><b>wrapper</b>: add common utilities </li>
