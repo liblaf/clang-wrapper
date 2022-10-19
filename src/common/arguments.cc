@@ -5,23 +5,32 @@
 #include <string>
 #include <vector>
 
-std::vector<std::string> Arguments::create_args(int argc, char** argv) {
-  std::vector<std::string> args;
-  args.reserve(argc);
+Arguments::Arguments(const std::vector<std::string>& args)
+    : std::vector<std::string>(args) {}
+
+Arguments::Arguments(int argc, char** argv) {
+  this->reserve(argc);
   for (int i = 0; i < argc; ++i) {
-    args.emplace_back(argv[i]);
+    this->emplace_back(argv[i]);
   }
-  return args;
 }
 
-char** Arguments::create_argv(const std::vector<std::string>& args) {
-  char** argv = new char*[args.size() + 1];
-  for (int i = 0; i < args.size(); ++i) {
-    argv[i] = new char[args[i].size() + 1];
-    strcpy(/*dest=*/argv[i], /*src=*/args[i].c_str());
+char** Arguments::argv() const {
+  char** argv = new char*[this->size() + 1];
+  for (int i = 0; i < this->size(); ++i) {
+    argv[i] = new char[this->at(i).size() + 1];
+    strcpy(/*dest=*/argv[i], /*src=*/this->at(i).c_str());
   }
-  argv[args.size()] = NULL;
+  argv[this->size()] = NULL;
   return argv;
+}
+
+std::string Arguments::command() const {
+  std::string command = "";
+  for (int i = 0; i < this->size(); ++i) {
+    command += "\"" + escape(this->at(i)) + "\" ";
+  }
+  return command;
 }
 
 void Arguments::free_argv(int argc, char** argv) {
@@ -31,16 +40,8 @@ void Arguments::free_argv(int argc, char** argv) {
   delete[] argv;
 }
 
-std::string Arguments::create_command(int argc, char** argv) {
-  return Arguments::create_command(Arguments::create_args(argc, argv));
-}
-
-std::string Arguments::create_command(const std::vector<std::string>& args) {
-  std::string command = "";
-  for (int i = 0; i < args.size(); ++i) {
-    command += "\"" + escape(args[i]) + "\" ";
-  }
-  return command;
+std::string Arguments::command(int argc, char** argv) {
+  return Arguments(argc, argv).command();
 }
 
 std::string Arguments::escape(std::string str) {
@@ -49,25 +50,27 @@ std::string Arguments::escape(std::string str) {
   return str;
 }
 
-std::vector<std::string> Arguments::disable_optimize(
-    std::vector<std::string> options) {
+Arguments Arguments::disable_optimize(Arguments options) {
   options.push_back("-Xclang");
   options.push_back("-disable-O0-optnone");
   options.push_back("-O0");
   return options;
 }
 
-std::vector<std::string> Arguments::enable_debug(
-    std::vector<std::string> options) {
+Arguments Arguments::enable_debug(Arguments options) {
   options.push_back("--debug");
   return options;
 }
 
-std::vector<std::string> Arguments::no_opaque_pointers(
-    std::vector<std::string> options) {
+Arguments Arguments::no_opaque_pointers(Arguments options) {
 #if __clang_major__ >= 14
   options.push_back("-Xclang");
   options.push_back("-no-opaque-pointers");
 #endif
+  return options;
+}
+
+Arguments Arguments::suppress_warnings(Arguments options) {
+  options.push_back("--no-warnings");
   return options;
 }
