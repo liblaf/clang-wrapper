@@ -9,6 +9,7 @@
 #include "llvm/IR/IRBuilder.h"
 #include "llvm/IR/Module.h"
 #include "pass/pass_base.h"
+#include "utility/assertion.h"
 
 using namespace llvm;
 
@@ -18,7 +19,9 @@ PassCallHook::PassCallHook(Module& target, Module& declaration)
 }
 
 bool PassCallHook::run_on_instruction(Instruction& inst) {
-  assert(inst.getModule() == (&(this->target())));
+  assert_instruction_belong(inst, this->target());
+  assert(inst.getModule()->getModuleIdentifier() ==
+         this->target().getModuleIdentifier());
   bool modified = false;
   if (isa<CallInst>(&inst)) {
     modified |= this->run_on_call_inst(*cast<CallInst>(&inst));
@@ -27,7 +30,7 @@ bool PassCallHook::run_on_instruction(Instruction& inst) {
 }
 
 bool PassCallHook::run_on_call_inst(CallInst& inst) {
-  assert(inst.getModule() == (&(this->target())));
+  assert_instruction_belong(inst, this->target());
   auto called_func = inst.getCalledFunction();
   auto called_func_name = called_func->getName();
   auto debug_loc = inst.getDebugLoc();

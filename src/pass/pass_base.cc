@@ -12,6 +12,7 @@
 #include "llvm/IRReader/IRReader.h"
 #include "llvm/Support/FileSystem.h"
 #include "llvm/Support/SourceMgr.h"
+#include "utility/assertion.h"
 
 using namespace llvm;
 
@@ -28,7 +29,7 @@ bool PassBase::run_on_module() {
 }
 
 bool PassBase::run_on_function(Function& func) {
-  assert(func.getParent() == (&(this->target())));
+  assert_function_belong(func, this->target());
   bool modified = false;
   for (auto& block : func) {
     modified |= this->run_on_block(block);
@@ -37,7 +38,7 @@ bool PassBase::run_on_function(Function& func) {
 }
 
 bool PassBase::run_on_block(BasicBlock& block) {
-  assert(block.getModule() == (&(this->target())));
+  assert_block_belong(block, this->target());
   bool modified = false;
   for (auto& inst : block) {
     modified |= this->run_on_instruction(inst);
@@ -46,7 +47,7 @@ bool PassBase::run_on_block(BasicBlock& block) {
 }
 
 bool PassBase::run_on_instruction(Instruction& inst) {
-  assert(inst.getModule() == (&(this->target())));
+  assert_instruction_belong(inst, this->target());
   bool modified = false;
   return modified;
 }

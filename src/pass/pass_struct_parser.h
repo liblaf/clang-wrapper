@@ -23,12 +23,7 @@ class PassStructParser : public PassBase {
  public:
   template <class PassType = PassStructParser>
   static bool apply_pass(llvm::StringRef target_ll) {
-    llvm::LLVMContext context;
-    auto target = PassType::parse_ir_file(target_ll, context);
-    auto pass = std::make_unique<PassType>(*target);
-    bool modified = pass->run_on_module();
-    if (modified) PassType::write_module(target_ll, *target);
-    return modified;
+    return PassBase::apply_pass<PassType>(target_ll);
   }
 
  protected:
