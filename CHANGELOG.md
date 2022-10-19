@@ -1,3 +1,25 @@
+## 0.6.0 (2022-10-19)
+
+### Feat
+
+- **utility**: add location utility
+- **common**: remove stdc option when using c++
+- **utility**: add JNI Interface Detector
+- add assertion utility for debug
+- **common**: add path utility for compatibility
+- **common**: implement class `Arguments`
+
+### Fix
+
+- **scripts**: pretty output
+- **utility**: fix `get_gep_index()`
+- **common**: change string vector to `Arguments`
+
+### Refactor
+
+- **runtime**: move files
+- **wrapper**: refine code
+
 ## 0.5.0 (2022-10-12)
 
 ### Feat
