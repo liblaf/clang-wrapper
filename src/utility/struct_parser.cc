@@ -49,6 +49,7 @@ StringRef StructParser::get_field_name_from_value(LoadInst& val) {
 }
 
 int StructParser::get_gep_index(GetElementPtrInst& inst) {
+  if (inst.getNumIndices() != 2) return -1;
   auto use = inst.idx_begin() + (inst.getNumIndices() - 1);
   if (!use) return -1;
   auto constant_int = dyn_cast_or_null<ConstantInt>(use->get());
