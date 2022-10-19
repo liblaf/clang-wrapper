@@ -60,12 +60,13 @@ function recover-clang() {
 function build() {
   backup-clang
   cmake -S "${WRAPPER_HOME}" -B "${WRAPPER_HOME}/build" \
-    -DASAN=OFF \
-    -DCMAKE_BUILD_TYPE=release \
-    -DLOG_LEVEL=OFF \
-    -DNDK=ON \
-    -DTARGET_CC="${TARGET_CC}" \
-    -DTARGET_CXX="${TARGET_CXX}"
+    -D ASAN=OFF \
+    -D CMAKE_BUILD_TYPE=release \
+    -D LOG_LEVEL=WARNING \
+    -D LOG_PATH="${WRAPPER_HOME}/wrapper.log" \
+    -D NDK=ON \
+    -D TARGET_CC="${TARGET_CC}" \
+    -D TARGET_CXX="${TARGET_CXX}"
   make --directory "${WRAPPER_HOME}/build" --jobs
   copy "${WRAPPER_HOME}/build/base" "${TARGET_LLVM_HOME}/bin/clang"
   copy "${WRAPPER_HOME}/build/base++" "${TARGET_LLVM_HOME}/bin/clang++"
