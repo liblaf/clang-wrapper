@@ -7,7 +7,7 @@
 
 namespace fs = std::filesystem;
 
-#else
+#else  // __clang_major__ >= 11
 
 #include <string>
 

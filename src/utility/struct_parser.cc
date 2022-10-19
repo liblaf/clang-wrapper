@@ -111,9 +111,9 @@ bool StructParser::run_on_dbg_declare_inst(DbgDeclareInst& inst) {
   this->probe_type(
 #if __clang_major__ >= 14
       pointer_type->getNonOpaquePointerElementType(),
-#else
+#else   // __clang_major__ >= 14
       pointer_type->getPointerElementType(),
-#endif
+#endif  // __clang_major__ >= 14
       di_type);
   assert(modified == false);
   return modified;
@@ -136,9 +136,9 @@ void StructParser::probe_type(Type* type, DIType* di_type) {
       this->probe_type(
 #if __clang_major__ >= 14
           pointer_type->getNonOpaquePointerElementType(),
-#else
+#else   // __clang_major__ >= 14
           pointer_type->getPointerElementType(),
-#endif
+#endif  // __clang_major__ >= 14
           debug_info_derived_type->getBaseType());
       break;
     }

@@ -10,9 +10,9 @@
 bool module_equal(llvm::Module& a, llvm::Module& b) {
 #if __clang_major__ >= 11
   return a.getModuleIdentifier() == b.getModuleIdentifier();
-#else
+#else   // __clang_major__ >= 11
   return true;
-#endif
+#endif  // __clang_major__ >= 11
 }
 
 bool function_belong(llvm::Function& func, llvm::Module& mod) {
