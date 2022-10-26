@@ -31,6 +31,7 @@ bool PassBase::run_on_module() {
 bool PassBase::run_on_function(Function& func) {
   assert_function_belong(func, this->target());
   bool modified = false;
+  if (func.getName().contains('.')) return modified;
   for (auto& block : func) {
     modified |= this->run_on_block(block);
   }
