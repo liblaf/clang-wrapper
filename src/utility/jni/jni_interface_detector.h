@@ -4,7 +4,7 @@
 #include "llvm/ADT/StringRef.h"
 #include "llvm/IR/Instructions.h"
 #include "llvm/IR/Module.h"
-#include "struct_parser.h"
+#include "utility/struct_parser.h"
 
 class JNIInterfaceDetector {
  public:
