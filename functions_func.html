@@ -65,7 +65,7 @@ $(function() {
 &#160;
 
 <h3><a id="index_a" name="index_a"></a>- a -</h3><ul>
-<li>apply_pass()&#160;:&#160;<a class="el" href="classPassBase.html#a1ce7efb8fc28f00ee848ebff85e85739">PassBase</a>, <a class="el" href="classPassCallHook.html#ac5bdc8736fcbe9fcb61cc5ca2686c675">PassCallHook</a>, <a class="el" href="classPassStructParser.html#a07c56f21b4233840079dc1cc2041202c">PassStructParser</a></li>
+<li>apply_pass()&#160;:&#160;<a class="el" href="classPassBase.html#a1ce7efb8fc28f00ee848ebff85e85739">PassBase</a>, <a class="el" href="classPassCallHook.html#ac5bdc8736fcbe9fcb61cc5ca2686c675">PassCallHook</a>, <a class="el" href="classPassInterfaceCounter.html#affc6cbe8120ef95e9c38e0d17dcf68db">PassInterfaceCounter</a>, <a class="el" href="classPassStructParser.html#a07c56f21b4233840079dc1cc2041202c">PassStructParser</a></li>
 <li>Arguments()&#160;:&#160;<a class="el" href="classArguments.html#a242ba51a58a3d2753a43485cbdb20d94">Arguments</a></li>
 <li>argv()&#160;:&#160;<a class="el" href="classArguments.html#a5480c91c9563eff87de65b7ffb983179">Arguments</a></li>
 </ul>
@@ -75,7 +75,7 @@ $(function() {
 <li>change_color()&#160;:&#160;<a class="el" href="classLogger.html#a7bf50551b0258e625248289e033ce358">Logger</a></li>
 <li>command()&#160;:&#160;<a class="el" href="classArguments.html#af8c9907bf21ed817d5787506f99a763e">Arguments</a></li>
 <li>compile_c()&#160;:&#160;<a class="el" href="classWrapperBase.html#afa64af7cb205dc556a6c916641e308ea">WrapperBase</a></li>
-<li>compile_s()&#160;:&#160;<a class="el" href="classWrapperBase.html#a1a2dec4e78500e83d5a66289224778c1">WrapperBase</a>, <a class="el" href="classWrapperCallHook.html#a8dd6036566831d9c094b513679e6cd25">WrapperCallHook</a>, <a class="el" href="classWrapperStructParser.html#a9317b2f331ca51abb38f9c22412c6294">WrapperStructParser</a></li>
+<li>compile_s()&#160;:&#160;<a class="el" href="classWrapperBase.html#a1a2dec4e78500e83d5a66289224778c1">WrapperBase</a>, <a class="el" href="classWrapperCallHook.html#a8dd6036566831d9c094b513679e6cd25">WrapperCallHook</a>, <a class="el" href="classWrapperInterfaceCounter.html#a7f63c527e49ab45936bed059b17bb49b">WrapperInterfaceCounter</a>, <a class="el" href="classWrapperStructParser.html#a9317b2f331ca51abb38f9c22412c6294">WrapperStructParser</a></li>
 <li>compiler()&#160;:&#160;<a class="el" href="classWrapperBase.html#a9c496f1eeb6bd8cf4d65cfd3c8df1cc3">WrapperBase</a></li>
 <li>critical()&#160;:&#160;<a class="el" href="classLogger.html#af9b20a84239f9be3a252ae025a8174aa">Logger</a></li>
 </ul>
@@ -101,6 +101,7 @@ $(function() {
 
 
 <h3><a id="index_f" name="index_f"></a>- f -</h3><ul>
+<li>filename()&#160;:&#160;<a class="el" href="classLogger.html#acb5d4761675f8451597102cecb56c81d">Logger</a></li>
 <li>free_argv()&#160;:&#160;<a class="el" href="classArguments.html#af2d92ed3661f5d5000352065afabcc10">Arguments</a></li>
 </ul>
 
@@ -117,7 +118,7 @@ $(function() {
 <li>get_gep_index()&#160;:&#160;<a class="el" href="classStructParser.html#acf3ee36a1c08bb4d2cb694e272beca60">StructParser</a></li>
 <li>get_inputs()&#160;:&#160;<a class="el" href="classWrapperBase.html#acd2f7016ab3ae40d6d075e640ae403ed">WrapperBase</a></li>
 <li>get_interface_name()&#160;:&#160;<a class="el" href="classJNIInterfaceDetector.html#a683a3900f50723d6928936dfe9e466e7">JNIInterfaceDetector</a></li>
-<li>get_log_path()&#160;:&#160;<a class="el" href="classLogger.html#aa99d7b961e4992f70ba2705e6f52d785">Logger</a></li>
+<li>get_log_path()&#160;:&#160;<a class="el" href="classLogger.html#ade72c6e28af7536e92ecf097a6ca76b5">Logger</a></li>
 <li>get_member_offset_in_bits()&#160;:&#160;<a class="el" href="classStructParser.html#a42262649eaef50776cff88f54380a6e3">StructParser</a></li>
 <li>get_options()&#160;:&#160;<a class="el" href="classWrapperBase.html#a411a9bee203dba412d1170c8c6e667df">WrapperBase</a></li>
 <li>get_phases()&#160;:&#160;<a class="el" href="classWrapperBase.html#a94266df7eae64aa1669b474be52b4b52">WrapperBase</a></li>
@@ -132,12 +133,17 @@ $(function() {
 
 <h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
 <li>info()&#160;:&#160;<a class="el" href="classLogger.html#ad02cd3194e60576ff6cca003e63e639f">Logger</a></li>
+<li>interface_detector()&#160;:&#160;<a class="el" href="classPassInterfaceCounter.html#a9dc89bb72d867a7151e366b2aa0e7ef0">PassInterfaceCounter</a></li>
+<li>is_dynamic_registered()&#160;:&#160;<a class="el" href="classJNIMethodDetector.html#a63cb3be0f547dd3a6bc4a878fa888923">JNIMethodDetector</a></li>
 <li>is_interface_call()&#160;:&#160;<a class="el" href="classJNIInterfaceDetector.html#a0ad1248b7696778083be4e1e884933d7">JNIInterfaceDetector</a></li>
+<li>is_jni_method()&#160;:&#160;<a class="el" href="classJNIMethodDetector.html#a9307e7f3b1ddebe99d43af4fdc00e9f3">JNIMethodDetector</a></li>
+<li>is_static_registered()&#160;:&#160;<a class="el" href="classJNIMethodDetector.html#aef26922d5db2424ed3a2d4613cae7b2c">JNIMethodDetector</a></li>
 </ul>
 
 
 <h3><a id="index_j" name="index_j"></a>- j -</h3><ul>
 <li>JNIInterfaceDetector()&#160;:&#160;<a class="el" href="classJNIInterfaceDetector.html#a30d2f816408ae388168c03e27438d60d">JNIInterfaceDetector</a></li>
+<li>JNIMethodDetector()&#160;:&#160;<a class="el" href="classJNIMethodDetector.html#aff6561011fff8715d174050ad8af6f2c">JNIMethodDetector</a></li>
 <li>join_args()&#160;:&#160;<a class="el" href="classWrapperBase.html#a9bab4a73bdf015c013ffa304053f4337">WrapperBase</a></li>
 </ul>
 
@@ -145,6 +151,7 @@ $(function() {
 <h3><a id="index_l" name="index_l"></a>- l -</h3><ul>
 <li>log()&#160;:&#160;<a class="el" href="classLogger.html#a5d62dafa1687e03712451fdb6512f348">Logger</a></li>
 <li>log_level()&#160;:&#160;<a class="el" href="classLogger.html#a5add1c10a639040200e4dac6d483eb37">Logger</a></li>
+<li>Logger()&#160;:&#160;<a class="el" href="classLogger.html#a8c03028b3cd2b3c5d342993add2c9de2">Logger</a></li>
 </ul>
 
 
@@ -159,6 +166,7 @@ $(function() {
 <li>parse_phases()&#160;:&#160;<a class="el" href="classPhase.html#a5527a7f65d35d3ef5731614d72ee9677">Phase</a></li>
 <li>PassBase()&#160;:&#160;<a class="el" href="classPassBase.html#a52913a2a0ee95c2174b59224d5c40663">PassBase</a></li>
 <li>PassCallHook()&#160;:&#160;<a class="el" href="classPassCallHook.html#a7ae70bebd8932ace855c62ce95bf8646">PassCallHook</a></li>
+<li>PassInterfaceCounter()&#160;:&#160;<a class="el" href="classPassInterfaceCounter.html#a3f7afe5994b53e78c772cb8d9829d84b">PassInterfaceCounter</a></li>
 <li>PassStructParser()&#160;:&#160;<a class="el" href="classPassStructParser.html#addb2bcd5f0dc2654deed77befff80d75">PassStructParser</a></li>
 <li>Path()&#160;:&#160;<a class="el" href="classfs_1_1Path.html#a0363a3f2c212982da1717bb399995a61">fs::Path</a></li>
 <li>Phase()&#160;:&#160;<a class="el" href="classPhase.html#a7b805dfedfba5bf85086b8c11c95c362">Phase</a></li>
@@ -174,13 +182,13 @@ $(function() {
 <li>replace_extension()&#160;:&#160;<a class="el" href="classfs_1_1Path.html#a5295ef5850338212ebd60fea63eeeea4">fs::Path</a></li>
 <li>reset_color()&#160;:&#160;<a class="el" href="classLogger.html#a0a684dbf1fa2c67da87604dcabf195f0">Logger</a></li>
 <li>run_on_block()&#160;:&#160;<a class="el" href="classPassBase.html#a4e6a01f37801aa278678b3f40d034199">PassBase</a>, <a class="el" href="classStructParser.html#ad492a808cbdb790f591e0221a758950b">StructParser</a></li>
-<li>run_on_call_inst()&#160;:&#160;<a class="el" href="classPassCallHook.html#a097d8d50fd18d7e6854dee00cbe73d99">PassCallHook</a></li>
+<li>run_on_call_inst()&#160;:&#160;<a class="el" href="classPassCallHook.html#a097d8d50fd18d7e6854dee00cbe73d99">PassCallHook</a>, <a class="el" href="classPassInterfaceCounter.html#aa5114fa1e75ff1f665d09a143e433d28">PassInterfaceCounter</a></li>
 <li>run_on_dbg_declare_inst()&#160;:&#160;<a class="el" href="classStructParser.html#ac568c1eb7be822f7abd73c3e2293af76">StructParser</a></li>
 <li>run_on_function()&#160;:&#160;<a class="el" href="classPassBase.html#a512739c398553b4cb0da2e98110aae1f">PassBase</a>, <a class="el" href="classStructParser.html#af1ad2a0c0e1e38f3afd0c9b4c46fa676">StructParser</a></li>
 <li>run_on_get_element_ptr_inst()&#160;:&#160;<a class="el" href="classPassStructParser.html#a67da6d705c44e5a1186e5ea59f7b7daa">PassStructParser</a></li>
 <li>run_on_instruction()&#160;:&#160;<a class="el" href="classPassBase.html#a11738779e84b3d57cf0dc15d047594dc">PassBase</a>, <a class="el" href="classPassCallHook.html#a569e4e3e29c21b89b5bed2f373b9a514">PassCallHook</a>, <a class="el" href="classPassStructParser.html#a3975590c50ecb8e2b49ba559c6ed1a3c">PassStructParser</a>, <a class="el" href="classStructParser.html#a3f9962ebcba6c9fe2ba04bf3c71108a5">StructParser</a></li>
 <li>run_on_load_inst()&#160;:&#160;<a class="el" href="classPassStructParser.html#aa63f04d9da7546dde954044dfce42ec3">PassStructParser</a></li>
-<li>run_on_module()&#160;:&#160;<a class="el" href="classPassBase.html#a8b86d531371e9785c00239696e119a74">PassBase</a>, <a class="el" href="classStructParser.html#a84cd57816967aa8b2d1c96cf39a829a0">StructParser</a></li>
+<li>run_on_module()&#160;:&#160;<a class="el" href="classJNIMethodDetector.html#a8abde9754dcfe76159d0a4d8a37933d8">JNIMethodDetector</a>, <a class="el" href="classPassBase.html#a8b86d531371e9785c00239696e119a74">PassBase</a>, <a class="el" href="classStructParser.html#a84cd57816967aa8b2d1c96cf39a829a0">StructParser</a></li>
 </ul>
 
 
@@ -195,7 +203,8 @@ $(function() {
 
 
 <h3><a id="index_t" name="index_t"></a>- t -</h3><ul>
-<li>target()&#160;:&#160;<a class="el" href="classJNIInterfaceDetector.html#a5d0ef69c057653a347d0852258f48904">JNIInterfaceDetector</a>, <a class="el" href="classPassBase.html#a29cfb24980cca45f2aea9379b6ade54e">PassBase</a>, <a class="el" href="classStructParser.html#a9be9e269c3ed241adb70dda370c46971">StructParser</a></li>
+<li>target()&#160;:&#160;<a class="el" href="classJNIInterfaceDetector.html#a5d0ef69c057653a347d0852258f48904">JNIInterfaceDetector</a>, <a class="el" href="classJNIMethodDetector.html#aad4406a326b4342aee972ced8070dfe8">JNIMethodDetector</a>, <a class="el" href="classPassBase.html#a29cfb24980cca45f2aea9379b6ade54e">PassBase</a>, <a class="el" href="classStructParser.html#a9be9e269c3ed241adb70dda370c46971">StructParser</a></li>
+<li>time()&#160;:&#160;<a class="el" href="classLogger.html#a52711ebcb49fa927ad0bcffd9a189ec6">Logger</a></li>
 <li>to_string()&#160;:&#160;<a class="el" href="classPhase.html#a3f9135130bb9cc3bf517f56168ac0533">Phase</a></li>
 </ul>
 
@@ -208,6 +217,7 @@ $(function() {
 
 
 <h3><a id="index__7E" name="index__7E"></a>- ~ -</h3><ul>
+<li>~Logger()&#160;:&#160;<a class="el" href="classLogger.html#acb668a9e186a25fbaad2e4af6d1ed00a">Logger</a></li>
 <li>~PassBase()&#160;:&#160;<a class="el" href="classPassBase.html#a2a271b23e1d6e6a541dd8de427abf475">PassBase</a></li>
 <li>~PassStructParser()&#160;:&#160;<a class="el" href="classPassStructParser.html#ac2f97aaa6e5a2c6de3f35a56ff26436c">PassStructParser</a></li>
 <li>~WrapperBase()&#160;:&#160;<a class="el" href="classWrapperBase.html#aab29f042e871f7abbcb3a202c08900b8">WrapperBase</a></li>

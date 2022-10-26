@@ -13,7 +13,7 @@ var searchData=
   ['get_5finputs_10',['get_inputs',['../classWrapperBase.html#acd2f7016ab3ae40d6d075e640ae403ed',1,'WrapperBase']]],
   ['get_5finst_5floc_11',['get_inst_loc',['../location_8h.html#a88d4215343a9280540abcf8743f04d02',1,'get_inst_loc(llvm::Instruction &amp;inst):&#160;location.h'],['../location_8cc.html#a4174b88bbf9ad871fb6a18365b4f5029',1,'get_inst_loc(Instruction &amp;inst):&#160;location.cc']]],
   ['get_5finterface_5fname_12',['get_interface_name',['../classJNIInterfaceDetector.html#a683a3900f50723d6928936dfe9e466e7',1,'JNIInterfaceDetector']]],
-  ['get_5flog_5fpath_13',['get_log_path',['../classLogger.html#aa99d7b961e4992f70ba2705e6f52d785',1,'Logger']]],
+  ['get_5flog_5fpath_13',['get_log_path',['../classLogger.html#ade72c6e28af7536e92ecf097a6ca76b5',1,'Logger']]],
   ['get_5fmember_5foffset_5fin_5fbits_14',['get_member_offset_in_bits',['../classStructParser.html#a42262649eaef50776cff88f54380a6e3',1,'StructParser']]],
   ['get_5foptions_15',['get_options',['../classWrapperBase.html#a411a9bee203dba412d1170c8c6e667df',1,'WrapperBase']]],
   ['get_5fphases_16',['get_phases',['../classWrapperBase.html#a94266df7eae64aa1669b474be52b4b52',1,'WrapperBase']]],

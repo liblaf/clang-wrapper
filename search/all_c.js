@@ -13,9 +13,8 @@ var searchData=
   ['log_5flevel_5foff_10',['LOG_LEVEL_OFF',['../logging_8h.html#a4837e193731aa69f0829202c4534cbb5',1,'logging.h']]],
   ['log_5flevel_5fwarning_11',['LOG_LEVEL_WARNING',['../logging_8h.html#af539a66abed2a7a15e3443d70a3cf1e1',1,'logging.h']]],
   ['log_5fpath_12',['LOG_PATH',['../logging_8h.html#a0134988ddb9f2cd0397f1ac985abd91c',1,'logging.h']]],
-  ['logger_13',['logger',['../logging_8cc.html#a66e3e3c277d097d2818ef8dd7654f0c8',1,'logging.cc']]],
-  ['logger_14',['Logger',['../classLogger.html',1,'']]],
-  ['logger_15',['logger',['../logging_8h.html#a66e3e3c277d097d2818ef8dd7654f0c8',1,'logging.cc']]],
-  ['logging_2ecc_16',['logging.cc',['../logging_8cc.html',1,'']]],
-  ['logging_2eh_17',['logging.h',['../logging_8h.html',1,'']]]
+  ['logger_13',['logger',['../logging_8h.html#a66e3e3c277d097d2818ef8dd7654f0c8',1,'logger():&#160;logging.cc'],['../logging_8cc.html#a66e3e3c277d097d2818ef8dd7654f0c8',1,'logger():&#160;logging.cc']]],
+  ['logger_14',['Logger',['../classLogger.html',1,'Logger'],['../classLogger.html#a8c03028b3cd2b3c5d342993add2c9de2',1,'Logger::Logger()']]],
+  ['logging_2ecc_15',['logging.cc',['../logging_8cc.html',1,'']]],
+  ['logging_2eh_16',['logging.h',['../logging_8h.html',1,'']]]
 ];

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['apply_5fpass_0',['apply_pass',['../classPassBase.html#a1ce7efb8fc28f00ee848ebff85e85739',1,'PassBase::apply_pass()'],['../classPassCallHook.html#ac5bdc8736fcbe9fcb61cc5ca2686c675',1,'PassCallHook::apply_pass()'],['../classPassStructParser.html#a07c56f21b4233840079dc1cc2041202c',1,'PassStructParser::apply_pass()']]],
+  ['apply_5fpass_0',['apply_pass',['../classPassInterfaceCounter.html#affc6cbe8120ef95e9c38e0d17dcf68db',1,'PassInterfaceCounter::apply_pass()'],['../classPassBase.html#a1ce7efb8fc28f00ee848ebff85e85739',1,'PassBase::apply_pass()'],['../classPassCallHook.html#ac5bdc8736fcbe9fcb61cc5ca2686c675',1,'PassCallHook::apply_pass()'],['../classPassStructParser.html#a07c56f21b4233840079dc1cc2041202c',1,'PassStructParser::apply_pass()']]],
   ['arguments_1',['Arguments',['../classArguments.html#a242ba51a58a3d2753a43485cbdb20d94',1,'Arguments::Arguments(const std::vector&lt; std::string &gt; &amp;args)'],['../classArguments.html#a37ca9b921df1132fd139a2becd500db0',1,'Arguments::Arguments(int argc, char **argv)']]],
   ['argv_2',['argv',['../classArguments.html#a5480c91c9563eff87de65b7ffb983179',1,'Arguments']]],
   ['assert_5fblock_5fbelong_3',['assert_block_belong',['../assertion_8cc.html#ade6aad928835beca9250e6c0060881cf',1,'assert_block_belong(llvm::BasicBlock &amp;block, llvm::Module &amp;mod):&#160;assertion.cc'],['../assertion_8h.html#ade6aad928835beca9250e6c0060881cf',1,'assert_block_belong(llvm::BasicBlock &amp;block, llvm::Module &amp;mod):&#160;assertion.cc']]],
