@@ -16,11 +16,9 @@ class PassCallHook : public PassBase {
  public:
   explicit PassCallHook(llvm::Module& target, llvm::Module& declaration);
 
- public:
   virtual bool run_on_instruction(llvm::Instruction& inst) override;
   virtual bool run_on_call_inst(llvm::CallInst& inst);
 
- public:
   template <class PassType = PassCallHook>
   static bool apply_pass(llvm::StringRef target_ll,
                          llvm::StringRef declaration_ll) {

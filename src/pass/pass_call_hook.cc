@@ -20,8 +20,6 @@ PassCallHook::PassCallHook(Module& target, Module& declaration)
 
 bool PassCallHook::run_on_instruction(Instruction& inst) {
   assert_instruction_belong(inst, this->target());
-  assert(inst.getModule()->getModuleIdentifier() ==
-         this->target().getModuleIdentifier());
   bool modified = false;
   if (isa<CallInst>(&inst)) {
     modified |= this->run_on_call_inst(*cast<CallInst>(&inst));
