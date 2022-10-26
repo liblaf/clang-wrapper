@@ -20,7 +20,9 @@
 #define TARGET_CXX "clang++"
 #endif  // TARGET_CXX
 
-// #define USE_CXX
+// #define USE_CXX 1
+
+// #define NDK 1
 
 class WrapperBase : public Executor {
  public:

@@ -33,7 +33,12 @@ auto WrapperBase::prepare_args(Arguments args)
 #ifdef USE_CXX
   options = Arguments::remove_stdc(options);
 #endif  // USE_CXX
+#ifdef NDK
+  options.push_back("-D");
+  options.push_back("ANDROID");
+#endif  // NDK
   options = Arguments::suppress_warnings(options);
+  options.push_back("-fPIC");
   return std::make_tuple(phases, inputs, options);
 }
 
@@ -105,6 +110,12 @@ fs::path WrapperBase::generate_ll(Arguments options, const fs::path& input,
   if (no_opaque_pointers) options = Arguments::no_opaque_pointers(options);
   options.push_back("--assemble");
   options.push_back("-emit-llvm");
+#ifdef USE_CXX
+  if (input.extension() == ".c") {
+    options.push_back("--language");
+    options.push_back("c");
+  }
+#endif  // USE_CXX
   options.push_back("--output");
   options.push_back(*output);
   auto args = this->join_args(options, {input});
