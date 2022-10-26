@@ -1,10 +1,13 @@
 #ifndef LOGGING_H_
 #define LOGGING_H_
 
-#include <stdexcept>
 #include <string>
+#include <system_error>
 
+#include "llvm/ADT/StringRef.h"
+#include "llvm/Support/FileSystem.h"
 #include "llvm/Support/raw_ostream.h"
+#include "path.h"
 
 #ifndef LOG_PATH
 #define LOG_PATH "/dev/stderr"
@@ -24,9 +27,10 @@
 
 class Logger : public llvm::raw_fd_ostream {
  public:
-  using llvm::raw_fd_ostream::raw_fd_ostream;
+  explicit Logger(llvm::StringRef filename, std::error_code& ec,
+                  llvm::sys::fs::OpenFlags flags);
+  ~Logger();
 
- public:
   template <class... Args>
   Logger& critical(const char* fmt, Args&&... args) {
     if (this->log_level() > LOG_LEVEL_CRITICAL) return *this;
@@ -40,7 +44,7 @@ class Logger : public llvm::raw_fd_ostream {
 
   template <class... Args>
   Logger& error(const char* fmt, Args&&... args) {
-    if (this->log_level() > LOG_LEVEL_INFO) return *this;
+    if (this->log_level() > LOG_LEVEL_ERROR) return *this;
     this->change_color(llvm::raw_ostream::Colors::RED);
     this->log("{}", Logger::get_prompt("ERROR"));
     this->log(fmt, args...);
@@ -51,7 +55,7 @@ class Logger : public llvm::raw_fd_ostream {
 
   template <class... Args>
   Logger& warning(const char* fmt, Args&&... args) {
-    if (this->log_level() > LOG_LEVEL_INFO) return *this;
+    if (this->log_level() > LOG_LEVEL_WARNING) return *this;
     this->change_color(llvm::raw_ostream::Colors::YELLOW, /*bold=*/true);
     this->log("{}", Logger::get_prompt("WARNING"));
     this->log(fmt, args...);
@@ -73,19 +77,19 @@ class Logger : public llvm::raw_fd_ostream {
 
   template <class... Args>
   Logger& debug(const char* fmt, Args&&... args) {
-    if (this->log_level() > LOG_LEVEL_INFO) return *this;
+    if (this->log_level() > LOG_LEVEL_DEBUG) return *this;
     this->log("{}", Logger::get_prompt("DEBUG"));
     this->log(fmt, args...);
     this->log("\n");
     return *this;
   }
 
- public:
+  fs::path filename() const;
   int log_level() const;
   void set_log_level(const int new_log_level = LOG_LEVEL_NOTSET);
 
- public:
-  static const char* get_log_path();
+  static fs::path get_log_path();
+  static std::string time();
 
  protected:
   template <class T, class... Args>
@@ -116,15 +120,14 @@ class Logger : public llvm::raw_fd_ostream {
 
   Logger& log(const char* fmt);
 
- protected:
   Logger& change_color(llvm::raw_ostream::Colors color, bool bold = false,
                        bool background = false);
   Logger& reset_color();
 
- protected:
   static std::string get_prompt(const std::string& type);
 
  private:
+  fs::path _filename;
   int _log_level = LOG_LEVEL_NOTSET;
 };
 
