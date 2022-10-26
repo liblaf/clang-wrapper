@@ -1,7 +1,7 @@
 if (POLICY CMP0048)
   cmake_policy(SET CMP0048 NEW)
 endif()
-project(clang-wrapper VERSION 0.6.0)
+project(clang-wrapper VERSION 0.7.0)
 cmake_minimum_required(VERSION 3.24)
 
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)

@@ -1,3 +1,21 @@
+## 0.7.0 (2022-10-26)
+
+### Feat
+
+- add JNI Interface Counter
+- **runtime**: add utility Dictionary
+
+### Fix
+
+- **wrapper**: manually add definition `ANDROID`
+- **pass**: fix compatibility with ASAN
+- **common**: seperate log into multiple files
+- **common**: fix LOG_LEVEL
+
+### Refactor
+
+- **utility**: refactor file structure
+
 ## 0.6.0 (2022-10-19)
 
 ### Feat
