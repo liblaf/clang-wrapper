@@ -1,6 +1,4 @@
 #include <memory>
-#include <string>
-#include <vector>
 
 #include "wrapper/wrapper_base.h"
 

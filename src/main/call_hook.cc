@@ -1,6 +1,4 @@
 #include <memory>
-#include <string>
-#include <vector>
 
 #include "wrapper/wrapper_call_hook.h"
 
